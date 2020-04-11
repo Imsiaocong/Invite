@@ -13,7 +13,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="Final" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eFe-6j-YS5">
@@ -136,6 +136,7 @@
                         <outlet property="currentLocation" destination="3eu-Zb-fra" id="hgv-Cj-e2e"/>
                         <outlet property="searchbar" destination="4Fi-Y9-2Vg" id="ElQ-gt-2fi"/>
                         <outlet property="time" destination="LFO-Ee-5B6" id="kzs-Fy-34a"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toMap" id="JSi-GP-DFc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tl5-jP-l2t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

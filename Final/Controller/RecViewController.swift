@@ -6,6 +6,14 @@
 //  Copyright © 2020 william haberkorn. All rights reserved.
 //
 
+//
+// Di Wang
+// Todo:
+// 1. To get the user location
+// 2. There is a bug in collectionview: when scrolling the cells, its background color gets deeper for some reason.
+// 3. Transfer information to MapViewController.
+// 4. Searchbar functionality
+
 import UIKit
 
 class CustomCell: UICollectionViewCell{
@@ -47,7 +55,7 @@ class RecViewController: UIViewController {
         
         //
         //fetchYelpBusinesses(latitude: 40.6916002, longitude: -73.9846688)
-        retrieveVenues(latitude: 40.6916002, longitude: -73.9846688, category: "gyms", limit: 5, sortBy: "distance", locale: "en_US") { (response, error) in
+        retrieveVenues(latitude: 40.6916002, longitude: -73.9846688, category: "cafe", limit: 5, sortBy: "distance", locale: "en_US") { (response, error) in
             if let response = response{
                 self.venues = response
                 DispatchQueue.main.async {
@@ -73,6 +81,14 @@ class RecViewController: UIViewController {
         time.text = DateFormatter.localizedString(from: Date(),
                                                   dateStyle: .long,
                                                   timeStyle: .short)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toMap"){
+            if let nextViewController = segue.destination as? MapViewController{
+                // transfer info from here
+            }
+        }
     }
     
     
