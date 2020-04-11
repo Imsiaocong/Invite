@@ -6,4 +6,5 @@ target 'Final' do
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'expanding-collection'
+  pod 'AFNetworking', '~> 4.0'
 end

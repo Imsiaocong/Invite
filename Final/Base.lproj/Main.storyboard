@@ -97,6 +97,10 @@
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="283" height="117"/>
+                                        <connections>
+                                            <outlet property="address" destination="A8K-u9-xbh" id="P6n-VL-X8f"/>
+                                            <outlet property="name" destination="qxs-qh-Ej3" id="vdE-t6-MBV"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>

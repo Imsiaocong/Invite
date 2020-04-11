@@ -17,6 +17,9 @@
 		3DB013D7243E87C10028645F /* FinalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB013D6243E87C10028645F /* FinalUITests.swift */; };
 		D2DFD4ABC202B4CD1DB4C3DA /* libPods-Final.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34CAEED74348430C519BD011 /* libPods-Final.a */; };
 		E40D3B322441530200A4EACA /* RecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40D3B312441530200A4EACA /* RecViewController.swift */; };
+		E4BA1E0D244179A600CC5E46 /* YelpClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA1E0C244179A600CC5E46 /* YelpClientManager.swift */; };
+		E4BA1E1024417D2100CC5E46 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA1E0F24417D2100CC5E46 /* Business.swift */; };
+		E4BA1E12244186FA00CC5E46 /* Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA1E11244186FA00CC5E46 /* Fetch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +57,10 @@
 		3DB013D8243E87C10028645F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67B074866F7EF178BD6AE5FC /* Pods-Final.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final.release.xcconfig"; path = "Target Support Files/Pods-Final/Pods-Final.release.xcconfig"; sourceTree = "<group>"; };
 		760B2699EAEBBE6774A29B97 /* Pods-Final.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final.debug.xcconfig"; path = "Target Support Files/Pods-Final/Pods-Final.debug.xcconfig"; sourceTree = "<group>"; };
-		E40D3B312441530200A4EACA /* RecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecViewController.swift; sourceTree = SOURCE_ROOT; };
+		E40D3B312441530200A4EACA /* RecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecViewController.swift; path = Final/Controller/RecViewController.swift; sourceTree = SOURCE_ROOT; };
+		E4BA1E0C244179A600CC5E46 /* YelpClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpClientManager.swift; sourceTree = "<group>"; };
+		E4BA1E0F24417D2100CC5E46 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		E4BA1E11244186FA00CC5E46 /* Fetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,10 +114,11 @@
 		3DB013B3243E87C10028645F /* Final */ = {
 			isa = PBXGroup;
 			children = (
+				E4BA1E0E24417CFE00CC5E46 /* Model */,
+				E4936AF02441737200C8AF54 /* API */,
+				E4936AEF2441733C00C8AF54 /* Controller */,
 				3DB013B4243E87C10028645F /* AppDelegate.swift */,
 				3DB013B6243E87C10028645F /* SceneDelegate.swift */,
-				3DB013B8243E87C10028645F /* MapViewController.swift */,
-				E40D3B312441530200A4EACA /* RecViewController.swift */,
 				3DB013BA243E87C10028645F /* Main.storyboard */,
 				3DB013BD243E87C10028645F /* Assets.xcassets */,
 				3DB013BF243E87C10028645F /* LaunchScreen.storyboard */,
@@ -145,6 +152,32 @@
 				67B074866F7EF178BD6AE5FC /* Pods-Final.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E4936AEF2441733C00C8AF54 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3DB013B8243E87C10028645F /* MapViewController.swift */,
+				E40D3B312441530200A4EACA /* RecViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E4936AF02441737200C8AF54 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E4BA1E0C244179A600CC5E46 /* YelpClientManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		E4BA1E0E24417CFE00CC5E46 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E4BA1E0F24417D2100CC5E46 /* Business.swift */,
+				E4BA1E11244186FA00CC5E46 /* Fetch.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FF94545EB9571375B4E6FD6B /* Frameworks */ = {
@@ -332,6 +365,9 @@
 			files = (
 				3DB013B9243E87C10028645F /* MapViewController.swift in Sources */,
 				3DB013B5243E87C10028645F /* AppDelegate.swift in Sources */,
+				E4BA1E0D244179A600CC5E46 /* YelpClientManager.swift in Sources */,
+				E4BA1E12244186FA00CC5E46 /* Fetch.swift in Sources */,
+				E4BA1E1024417D2100CC5E46 /* Business.swift in Sources */,
 				3DB013B7243E87C10028645F /* SceneDelegate.swift in Sources */,
 				E40D3B322441530200A4EACA /* RecViewController.swift in Sources */,
 			);
