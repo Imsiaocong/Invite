@@ -16,4 +16,5 @@ struct Business {
     var isClosed: Bool?
     var distance: Double?
     var address: String?
+    var image_address: String?
 }

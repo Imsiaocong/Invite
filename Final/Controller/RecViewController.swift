@@ -19,6 +19,8 @@ import UIKit
 class CustomCell: UICollectionViewCell{
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var rating: UILabel!
     
 }
 
@@ -27,10 +29,13 @@ class RecViewController: UIViewController {
     @IBOutlet weak var searchbar: UISearchBar!
     @IBOutlet weak var currentLocation: UILabel!
     @IBOutlet weak var time: UILabel!
-    @IBOutlet weak var search: UITextField!
+    @IBOutlet weak var user_review: UILabel!
+    @IBOutlet weak var background: UIImageView!
     
     var timer = Timer()
     var venues: [Business] = []
+    var reviews_: [Reviews] = []
+    var ids: [Reviews] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,10 +61,24 @@ class RecViewController: UIViewController {
         searchbar.sendSubviewToBack(blurView)
         
         //
-        //fetchYelpBusinesses(latitude: 40.6916002, longitude: -73.9846688)
-        retrieveVenues(latitude: 40.6916002, longitude: -73.9846688, category: "newamerican", limit: 5, sortBy: "distance", locale: "en_US") { (response, error) in
+        // fetchYelpBusinesses(latitude: 40.6916002, longitude: -73.9846688)
+        retrieveVenues(latitude: 40.6916002, longitude: -73.9846688, category: "newamerican", limit: 8, sortBy: "rating", locale: "en_US") { (response, error) in
             if let response = response{
                 self.venues = response
+                
+                //
+                // retrieve reviews
+                //
+                self.retrieveReviews(id: self.venues[0].id! ) { (response_, error) in
+                    //print(self.ids[0])
+                    if let response = response_{
+                        self.reviews_ = response
+                        //print(response)
+                        DispatchQueue.main.async {
+                            self.user_review.text = self.reviews_[0].text
+                        }
+                    }
+                }
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
@@ -86,9 +105,23 @@ class RecViewController: UIViewController {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        retrieveVenues(latitude: 40.6916002, longitude: -73.9846688, category: "\(self.searchbar.searchTextField.text ?? "bars")", limit: 5, sortBy: "distance", locale: "en_US") { (response, error) in
+        retrieveVenues(latitude: 40.6916002, longitude: -73.9846688, category: "\(self.searchbar.searchTextField.text ?? "bars")", limit: 8, sortBy: "rating", locale: "en_US") { (response, error) in
             if let response = response{
                 self.venues = response
+                
+                //
+                // retrieve reviews
+                //
+                self.retrieveReviews(id: self.venues[0].id! ) { (response_, error) in
+                    if let response = response_{
+                        self.reviews_ = response
+                        //print(response)
+                        self.saveData(info: self.reviews_)
+                        DispatchQueue.main.async {
+                            self.user_review.text = self.reviews_[0].text
+                        }
+                    }
+                }
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
@@ -96,6 +129,53 @@ class RecViewController: UIViewController {
         }
         self.searchbar.searchTextField.resignFirstResponder()
         return true
+    }
+    
+    
+    // for paging
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let x = collectionView.contentOffset.x
+        let w = collectionView.bounds.size.width
+        let currentPage = Int(ceil(x/w))
+        // Do whatever with currentPage.
+        //
+        retrieveVenues(latitude: 40.6916002, longitude: -73.9846688, category: "\(self.searchbar.searchTextField.text ?? "bars")", limit: 8, sortBy: "rating", locale: "en_US") { (response, error) in
+            if let response = response{
+                self.venues = response
+                
+                //
+                // retrieve reviews
+                //
+                self.retrieveReviews(id: self.venues[currentPage].id! ) { (response_, error) in
+                    //print(self.ids[0])
+                    if let response = response_{
+                        self.reviews_ = response
+                        //print(response)
+                        DispatchQueue.main.async {
+                            self.user_review.text = self.reviews_[0].text
+                        }
+                    }
+                }
+                DispatchQueue.main.async {
+                    
+                }
+            }
+        }
+        
+        //
+        // Change background when scroll
+        let toImage = UIImage(named:"background0\(currentPage).png")
+        UIView.transition(with: self.background,
+                          duration: 0.3,
+                          options: .transitionCrossDissolve,
+                          animations: {
+                              self.background.image = toImage
+                          },
+                          completion: nil)
+    }
+    
+    func saveData(info:[Reviews]){
+        self.ids = info
     }
     
     
@@ -124,6 +204,8 @@ extension RecViewController: UICollectionViewDataSource, UICollectionViewDelegat
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cells", for: indexPath) as! CustomCell
         // Do something with cell;
         cell.layer.cornerRadius = 16;
+        cell.image.layer.cornerRadius = 40
+        
         
         // Visual fx
         let regularBlur = UIBlurEffect(style: .regular)
@@ -136,6 +218,25 @@ extension RecViewController: UICollectionViewDataSource, UICollectionViewDelegat
         // retrieve data
         cell.name.text = venues[indexPath.row].name
         cell.address.text = venues[indexPath.row].address
+        cell.rating.text = venues[indexPath.row].rating?.description
+        DispatchQueue.global().async {
+
+            let url = URL(string: self.venues[indexPath.row].image_address!)!
+
+               do {
+
+                   let data = try Data(contentsOf: url)
+
+                   DispatchQueue.main.async {
+
+                    cell.image.image = UIImage(data: data)
+
+                   }
+
+               } catch {
+                   print(error.localizedDescription)
+               }
+           }
         return cell
     }
     
