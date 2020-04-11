@@ -1,4 +1,5 @@
 PODS:
+  - CBFlashyTabBarController (0.8.3)
   - GoogleMaps (3.8.0):
     - GoogleMaps/Maps (= 3.8.0)
   - GoogleMaps/Base (3.8.0)
@@ -8,18 +9,21 @@ PODS:
     - GoogleMaps/Base (= 3.8.0)
 
 DEPENDENCIES:
+  - CBFlashyTabBarController
   - GoogleMaps
   - GooglePlaces
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - CBFlashyTabBarController
     - GoogleMaps
     - GooglePlaces
 
 SPEC CHECKSUMS:
+  CBFlashyTabBarController: bc6b11dd4cbc9b54785c8944156e2f4d4f03b088
   GoogleMaps: 7c8d66d70e4e8c300f43a7219d8fdaad7b325a9a
   GooglePlaces: d5f70c3e9e427964fdeca1301a665d276ccd8754
 
-PODFILE CHECKSUM: bcc71aa77ad2f91fb5193f3247ab5d08e78ca6c8
+PODFILE CHECKSUM: cbb284de8e93c1d985ad3f6ad2358f73adc4cb42
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.8.4

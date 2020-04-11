@@ -5,4 +5,5 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'Final' do
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'expanding-collection'
 end

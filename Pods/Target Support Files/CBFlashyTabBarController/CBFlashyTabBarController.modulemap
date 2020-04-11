@@ -1,0 +1,6 @@
+module CBFlashyTabBarController {
+  umbrella header "CBFlashyTabBarController-umbrella.h"
+
+  export *
+  module * { export * }
+}

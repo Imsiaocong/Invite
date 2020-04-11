@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -29,11 +29,21 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		B7FF95E760CB5ABCDDD80E1C5023E95E /* Pods-Final-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A38B7DCC6022D3B127177B00C345A62 /* Pods-Final-dummy.m */; };
+		082FD1FE09571A028D772B55E440BAB2 /* CBFlashyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28C662EF36CF6D520EB3C9C34AE7ED3 /* CBFlashyTabBar.swift */; };
+		0EB39ABA5F81A317117BA60A84462B80 /* CBFlashyTabBarController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C4773382A520D2028DF9F89DCDDB1125 /* CBFlashyTabBarController-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1127970003933EA756B4FF9B2FA0A07E /* CBTabItemBasicAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEF6312AE5FE97F48C99AA5F1F34D55 /* CBTabItemBasicAnimation.swift */; };
+		3173E25A6E39C4987DD0E3281B35A754 /* CBTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BBDB38CCB3710056BD41BC2F28909C /* CBTabBarButton.swift */; };
+		6A7A148263D3CA4980EFE41F420B9A61 /* Pods-Final-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAA318CCF6E78796B950193D8B518C8 /* Pods-Final-dummy.m */; };
+		8AEF93ED2B339C682E726805BB6D80E5 /* CBTabItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945939BF6013509BC6D568E0B9F90920 /* CBTabItemAnimation.swift */; };
+		AA9D76249330F626F48371126D6289AB /* CBFlashyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D09603988E559E2D425DACC304ADEDE /* CBFlashyTabBarController.swift */; };
+		B55584C70F14EE2233BF11ABE4ED3BB2 /* CBTabItemDeselectAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C6A8F806A7CC08B206A47121F382F6 /* CBTabItemDeselectAnimation.swift */; };
+		C0176ADAA6FF0F262E1D94EDB82761C0 /* CBFlashyTabBarController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A48291F8976B118B865B18AC093EA65 /* CBFlashyTabBarController-dummy.m */; };
+		E840E22F7314861158FD437281E4C392 /* Pods-Final-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 944B41432EB477745FC93AC7D3CF695A /* Pods-Final-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EDEF5B9A8513A3EBDBAE67CA0D6F8432 /* CBTabItemSelectAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4206CECE432F28823B93D8C3B98A71F7 /* CBTabItemSelectAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2A6C71BBA96253BC9534B458C5E75CC8 /* PBXContainerItemProxy */ = {
+		20949645189CBEB82EACB665307CD00E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -47,38 +57,65 @@
 			remoteGlobalIDString = E5B4BBC6DD552AC8943C7E22772FC1D3;
 			remoteInfo = GoogleMaps;
 		};
-		86B025BB1A6E0C8230C7491494547980 /* PBXContainerItemProxy */ = {
+		7C75984D85D0231AD97D39676AA49BF7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0C1885900810601510E0C632060FAF26;
 			remoteInfo = GooglePlaces;
 		};
+		CD28AA23DF802ED52C4074CB139EA379 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5737872A76EFCB2A97F445D9434307C7;
+			remoteInfo = CBFlashyTabBarController;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		23F651581A8A5A322B46718DD384709B /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
-		2A7A31720BE3F92CC2C776DB566BC183 /* Pods-Final-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Final-acknowledgements.plist"; sourceTree = "<group>"; };
-		3628BA6D289325DD5E007B0D54213ADE /* Pods-Final.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Final.release.xcconfig"; sourceTree = "<group>"; };
-		4E256CB72E069B4C851E32F3924687B3 /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
-		6A38B7DCC6022D3B127177B00C345A62 /* Pods-Final-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Final-dummy.m"; sourceTree = "<group>"; };
-		8704E7734F2D03B8EF86CFC319C943BC /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
-		8EBF4D65DD3B0EDCC39AF1C317B7FF1D /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
-		9C729F3714998C7C3F3D788777A06264 /* GooglePlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.debug.xcconfig; sourceTree = "<group>"; };
+		07D4E958BAD766CBA1D48DEB63D524C9 /* libCBFlashyTabBarController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libCBFlashyTabBarController.a; path = libCBFlashyTabBarController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		09BA1DD57AB84E3289CCCCCD63772E41 /* Pods-Final-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Final-acknowledgements.plist"; sourceTree = "<group>"; };
+		0AAA318CCF6E78796B950193D8B518C8 /* Pods-Final-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Final-dummy.m"; sourceTree = "<group>"; };
+		0D09603988E559E2D425DACC304ADEDE /* CBFlashyTabBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBFlashyTabBarController.swift; path = CBFlashyTabBarController/Classes/CBFlashyTabBarController.swift; sourceTree = "<group>"; };
+		14736B9F1DB3D112FB5E427FB4535780 /* Pods-Final-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Final-resources.sh"; sourceTree = "<group>"; };
+		34C6A8F806A7CC08B206A47121F382F6 /* CBTabItemDeselectAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBTabItemDeselectAnimation.swift; path = CBFlashyTabBarController/Classes/Animation/CBTabItemDeselectAnimation.swift; sourceTree = "<group>"; };
+		35BBDB38CCB3710056BD41BC2F28909C /* CBTabBarButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBTabBarButton.swift; path = CBFlashyTabBarController/Classes/CBTabBarButton.swift; sourceTree = "<group>"; };
+		3ACBCFA5CB6A2091AE2C73B925A85D8B /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		4206CECE432F28823B93D8C3B98A71F7 /* CBTabItemSelectAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBTabItemSelectAnimation.swift; path = CBFlashyTabBarController/Classes/Animation/CBTabItemSelectAnimation.swift; sourceTree = "<group>"; };
+		5217FF3F6574C0C3B881B9992DFBF880 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
+		5B413556490B7601D58E545192EA7FF2 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
+		5F27D211EA256C443B1AB48DF8D7D2EE /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		7A48291F8976B118B865B18AC093EA65 /* CBFlashyTabBarController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CBFlashyTabBarController-dummy.m"; sourceTree = "<group>"; };
+		7C6EF67CF0DF7146982BEA2A7C712CCD /* GoogleMaps.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMaps.xcconfig; sourceTree = "<group>"; };
+		80AB8C6BD9A91255B98CA050A6A58FFB /* Pods-Final.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Final.release.xcconfig"; sourceTree = "<group>"; };
+		944B41432EB477745FC93AC7D3CF695A /* Pods-Final-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Final-umbrella.h"; sourceTree = "<group>"; };
+		945939BF6013509BC6D568E0B9F90920 /* CBTabItemAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBTabItemAnimation.swift; path = CBFlashyTabBarController/Classes/Animation/CBTabItemAnimation.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9E830DD9530F13E283DEC78352A2F03D /* GoogleMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMaps.release.xcconfig; sourceTree = "<group>"; };
-		A4658982FD89F2A77A672D9AFC716B28 /* GooglePlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.release.xcconfig; sourceTree = "<group>"; };
-		B0F28FD83C78E1779762C2C7A6081991 /* Pods-Final.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Final.debug.xcconfig"; sourceTree = "<group>"; };
-		DD736093511C9E6EBB54DB5CBC7EEF74 /* Pods-Final-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Final-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E74A4A5FDDD4F90A8A55EB206C7681BC /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
-		EAB0A618A9BB1F15026DE4AF27E7C473 /* Pods-Final-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Final-resources.sh"; sourceTree = "<group>"; };
-		F8C3BB261D41EB0A05EAE541E50E3DAB /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
-		FA12A18F12A10F6BE94B10C390987756 /* GoogleMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMaps.debug.xcconfig; sourceTree = "<group>"; };
+		ACCE8F70FFAC2B2FC03B16510882537D /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		AEA5C12E795825AA217C69BFF7D62D0B /* GooglePlaces.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.xcconfig; sourceTree = "<group>"; };
+		C28C662EF36CF6D520EB3C9C34AE7ED3 /* CBFlashyTabBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBFlashyTabBar.swift; path = CBFlashyTabBarController/Classes/CBFlashyTabBar.swift; sourceTree = "<group>"; };
+		C4773382A520D2028DF9F89DCDDB1125 /* CBFlashyTabBarController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CBFlashyTabBarController-umbrella.h"; sourceTree = "<group>"; };
+		D683FE0D03DAF8AD94B584CD8FA627B9 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
+		DEA8ADF175463F131581CF23A1782AE2 /* CBFlashyTabBarController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CBFlashyTabBarController-prefix.pch"; sourceTree = "<group>"; };
+		DEEF6312AE5FE97F48C99AA5F1F34D55 /* CBTabItemBasicAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBTabItemBasicAnimation.swift; path = CBFlashyTabBarController/Classes/Animation/CBTabItemBasicAnimation.swift; sourceTree = "<group>"; };
+		E1CFFE44B80942F56B0FC8DB93BBDF29 /* CBFlashyTabBarController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CBFlashyTabBarController.xcconfig; sourceTree = "<group>"; };
+		F0E72F7548CDFEE615672A99A3C52C57 /* CBFlashyTabBarController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CBFlashyTabBarController.modulemap; sourceTree = "<group>"; };
+		FA7AAE206662B5C5194B88DCA6FDDA82 /* Pods-Final-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Final-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FC38F4CE96FBD4B233B5A21B6A0B1D23 /* Pods-Final.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Final.modulemap"; sourceTree = "<group>"; };
 		FD007FBFB70813F4D7DF03578CA62B2E /* libPods-Final.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Final.a"; path = "libPods-Final.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE6945C48BCF3CFFD2B2A42BC2BD0243 /* Pods-Final.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Final.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		909B4FE024526718543D64695AFE68F6 /* Frameworks */ = {
+		4FA59177B0158B505D0E373E9D0E8CE7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9714F2440795FC2EAEF2761241ACDE2A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -88,109 +125,123 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01178CDE9E7F5E928EDC642D6B628FE0 /* Frameworks */ = {
+		3627B335109F66368782318F2D376711 /* GoogleMaps */ = {
 			isa = PBXGroup;
 			children = (
-				8EBF4D65DD3B0EDCC39AF1C317B7FF1D /* GoogleMapsBase.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		0883B537F1FDF67277437486C4066E63 /* GoogleMaps */ = {
-			isa = PBXGroup;
-			children = (
-				E86A34344FF943F078B6064D778D230A /* Base */,
-				A38D68C78C032F2CEEEEED36818D37F0 /* Maps */,
-				6C8EBDD6FEE473D639E9FF7A802869C0 /* Support Files */,
+				B90107CC291B13C286B250720B96581A /* Base */,
+				F17D2419447A294B4A0ED707D8BC96EC /* Maps */,
+				5ACA8E4EFD69C16764C55E881387C374 /* Support Files */,
 			);
 			name = GoogleMaps;
 			path = GoogleMaps;
 			sourceTree = "<group>";
 		};
-		3582EF5F85D78C1DB07F01BC0BFA167E /* Support Files */ = {
+		3BFB6E366C8C9B32B3FC06336063CE79 /* CBFlashyTabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				9C729F3714998C7C3F3D788777A06264 /* GooglePlaces.debug.xcconfig */,
-				A4658982FD89F2A77A672D9AFC716B28 /* GooglePlaces.release.xcconfig */,
+				C28C662EF36CF6D520EB3C9C34AE7ED3 /* CBFlashyTabBar.swift */,
+				0D09603988E559E2D425DACC304ADEDE /* CBFlashyTabBarController.swift */,
+				35BBDB38CCB3710056BD41BC2F28909C /* CBTabBarButton.swift */,
+				945939BF6013509BC6D568E0B9F90920 /* CBTabItemAnimation.swift */,
+				DEEF6312AE5FE97F48C99AA5F1F34D55 /* CBTabItemBasicAnimation.swift */,
+				34C6A8F806A7CC08B206A47121F382F6 /* CBTabItemDeselectAnimation.swift */,
+				4206CECE432F28823B93D8C3B98A71F7 /* CBTabItemSelectAnimation.swift */,
+				6B965C823209608F8A9E953261ABD676 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/GooglePlaces";
+			name = CBFlashyTabBarController;
+			path = CBFlashyTabBarController;
 			sourceTree = "<group>";
 		};
-		3DEDE174E46BA481A134DC89E17CF5F7 /* Targets Support Files */ = {
+		45FE524F610B2BDF7FBBB7E60464C531 /* GooglePlaces */ = {
 			isa = PBXGroup;
 			children = (
-				95DD34C7F71D5FCAA7247C95321F693A /* Pods-Final */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		3FE4CC4B7B0241873FFF96886667937D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8704E7734F2D03B8EF86CFC319C943BC /* GooglePlaces.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		43D69AA4DB012B84D8889790B1BE429B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FD007FBFB70813F4D7DF03578CA62B2E /* libPods-Final.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		446F55954A1B4F44697D4CD53ABC566B /* GooglePlaces */ = {
-			isa = PBXGroup;
-			children = (
-				3FE4CC4B7B0241873FFF96886667937D /* Frameworks */,
-				7DDA47E3D8C82ADCB64F7C6FC9641D65 /* Resources */,
-				3582EF5F85D78C1DB07F01BC0BFA167E /* Support Files */,
+				87E22E2BE6A9B6DCCB510A406471B48A /* Frameworks */,
+				F477B4B4F57BAB71E8C442F651307546 /* Resources */,
+				4CBB2F616D72E876BDC768CE62072593 /* Support Files */,
 			);
 			name = GooglePlaces;
 			path = GooglePlaces;
 			sourceTree = "<group>";
 		};
-		6C8EBDD6FEE473D639E9FF7A802869C0 /* Support Files */ = {
+		4CBB2F616D72E876BDC768CE62072593 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				FA12A18F12A10F6BE94B10C390987756 /* GoogleMaps.debug.xcconfig */,
-				9E830DD9530F13E283DEC78352A2F03D /* GoogleMaps.release.xcconfig */,
+				AEA5C12E795825AA217C69BFF7D62D0B /* GooglePlaces.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GooglePlaces";
+			sourceTree = "<group>";
+		};
+		5ACA8E4EFD69C16764C55E881387C374 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7C6EF67CF0DF7146982BEA2A7C712CCD /* GoogleMaps.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/GoogleMaps";
 			sourceTree = "<group>";
 		};
-		7DDA47E3D8C82ADCB64F7C6FC9641D65 /* Resources */ = {
+		6B965C823209608F8A9E953261ABD676 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				4E256CB72E069B4C851E32F3924687B3 /* GooglePlaces.bundle */,
+				F0E72F7548CDFEE615672A99A3C52C57 /* CBFlashyTabBarController.modulemap */,
+				E1CFFE44B80942F56B0FC8DB93BBDF29 /* CBFlashyTabBarController.xcconfig */,
+				7A48291F8976B118B865B18AC093EA65 /* CBFlashyTabBarController-dummy.m */,
+				DEA8ADF175463F131581CF23A1782AE2 /* CBFlashyTabBarController-prefix.pch */,
+				C4773382A520D2028DF9F89DCDDB1125 /* CBFlashyTabBarController-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CBFlashyTabBarController";
+			sourceTree = "<group>";
+		};
+		6BA7EA8F5135A24DECAD39F0A23304E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ACCE8F70FFAC2B2FC03B16510882537D /* GoogleMaps.framework */,
+				5217FF3F6574C0C3B881B9992DFBF880 /* GoogleMapsCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7C5A8B0090EFE5B9512BF2E836A85004 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5F27D211EA256C443B1AB48DF8D7D2EE /* GoogleMaps.bundle */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		95DD34C7F71D5FCAA7247C95321F693A /* Pods-Final */ = {
+		87E22E2BE6A9B6DCCB510A406471B48A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DD736093511C9E6EBB54DB5CBC7EEF74 /* Pods-Final-acknowledgements.markdown */,
-				2A7A31720BE3F92CC2C776DB566BC183 /* Pods-Final-acknowledgements.plist */,
-				6A38B7DCC6022D3B127177B00C345A62 /* Pods-Final-dummy.m */,
-				EAB0A618A9BB1F15026DE4AF27E7C473 /* Pods-Final-resources.sh */,
-				B0F28FD83C78E1779762C2C7A6081991 /* Pods-Final.debug.xcconfig */,
-				3628BA6D289325DD5E007B0D54213ADE /* Pods-Final.release.xcconfig */,
+				5B413556490B7601D58E545192EA7FF2 /* GooglePlaces.framework */,
 			);
-			name = "Pods-Final";
-			path = "Target Support Files/Pods-Final";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A38D68C78C032F2CEEEEED36818D37F0 /* Maps */ = {
+		8A57DA479C95DDDC2FAA114D175075D0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E435AD63DBCE250679648002DC9F8442 /* Frameworks */,
-				FAF4CAFF608973234241B6D824C4FC0F /* Resources */,
+				07D4E958BAD766CBA1D48DEB63D524C9 /* libCBFlashyTabBarController.a */,
+				FD007FBFB70813F4D7DF03578CA62B2E /* libPods-Final.a */,
 			);
-			name = Maps;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A9127C3A2508388EA853CA2A00E2496C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D683FE0D03DAF8AD94B584CD8FA627B9 /* GoogleMapsBase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B90107CC291B13C286B250720B96581A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A9127C3A2508388EA853CA2A00E2496C /* Frameworks */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -198,10 +249,20 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
-				E858A99A3564099E88E4CF05F26A517D /* Pods */,
-				43D69AA4DB012B84D8889790B1BE429B /* Products */,
-				3DEDE174E46BA481A134DC89E17CF5F7 /* Targets Support Files */,
+				D530FE17C322C9C6B533D0207910655B /* Pods */,
+				8A57DA479C95DDDC2FAA114D175075D0 /* Products */,
+				E13DE2442764AD5344F17B4FE60A904B /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		D530FE17C322C9C6B533D0207910655B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3BFB6E366C8C9B32B3FC06336063CE79 /* CBFlashyTabBarController */,
+				3627B335109F66368782318F2D376711 /* GoogleMaps */,
+				45FE524F610B2BDF7FBBB7E60464C531 /* GooglePlaces */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
@@ -211,66 +272,101 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E435AD63DBCE250679648002DC9F8442 /* Frameworks */ = {
+		E13DE2442764AD5344F17B4FE60A904B /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F8C3BB261D41EB0A05EAE541E50E3DAB /* GoogleMaps.framework */,
-				23F651581A8A5A322B46718DD384709B /* GoogleMapsCore.framework */,
+				F647B4FFE29BFBC4C316980621E06BE0 /* Pods-Final */,
 			);
-			name = Frameworks;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		E858A99A3564099E88E4CF05F26A517D /* Pods */ = {
+		F17D2419447A294B4A0ED707D8BC96EC /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				0883B537F1FDF67277437486C4066E63 /* GoogleMaps */,
-				446F55954A1B4F44697D4CD53ABC566B /* GooglePlaces */,
+				6BA7EA8F5135A24DECAD39F0A23304E1 /* Frameworks */,
+				7C5A8B0090EFE5B9512BF2E836A85004 /* Resources */,
 			);
-			name = Pods;
+			name = Maps;
 			sourceTree = "<group>";
 		};
-		E86A34344FF943F078B6064D778D230A /* Base */ = {
+		F477B4B4F57BAB71E8C442F651307546 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				01178CDE9E7F5E928EDC642D6B628FE0 /* Frameworks */,
-			);
-			name = Base;
-			sourceTree = "<group>";
-		};
-		FAF4CAFF608973234241B6D824C4FC0F /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				E74A4A5FDDD4F90A8A55EB206C7681BC /* GoogleMaps.bundle */,
+				3ACBCFA5CB6A2091AE2C73B925A85D8B /* GooglePlaces.bundle */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		F647B4FFE29BFBC4C316980621E06BE0 /* Pods-Final */ = {
+			isa = PBXGroup;
+			children = (
+				FC38F4CE96FBD4B233B5A21B6A0B1D23 /* Pods-Final.modulemap */,
+				FA7AAE206662B5C5194B88DCA6FDDA82 /* Pods-Final-acknowledgements.markdown */,
+				09BA1DD57AB84E3289CCCCCD63772E41 /* Pods-Final-acknowledgements.plist */,
+				0AAA318CCF6E78796B950193D8B518C8 /* Pods-Final-dummy.m */,
+				14736B9F1DB3D112FB5E427FB4535780 /* Pods-Final-resources.sh */,
+				944B41432EB477745FC93AC7D3CF695A /* Pods-Final-umbrella.h */,
+				FE6945C48BCF3CFFD2B2A42BC2BD0243 /* Pods-Final.debug.xcconfig */,
+				80AB8C6BD9A91255B98CA050A6A58FFB /* Pods-Final.release.xcconfig */,
+			);
+			name = "Pods-Final";
+			path = "Target Support Files/Pods-Final";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		CDD606415DFE1D20D5C512EE45F6B397 /* Headers */ = {
+		DB0404B1ABB1AD2FD0E0FE9F25EE104B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E840E22F7314861158FD437281E4C392 /* Pods-Final-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEAF6B502B900C31C0044AAD88993952 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EB39ABA5F81A317117BA60A84462B80 /* CBFlashyTabBarController-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		930BFF37316253DD24D2622379CA6632 /* Pods-Final */ = {
+		5737872A76EFCB2A97F445D9434307C7 /* CBFlashyTabBarController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0131D49447E561E53A7A361652F42A0D /* Build configuration list for PBXNativeTarget "Pods-Final" */;
+			buildConfigurationList = 13B5EBCBCA0A5EDC4FF540B92F2234AB /* Build configuration list for PBXNativeTarget "CBFlashyTabBarController" */;
 			buildPhases = (
-				CDD606415DFE1D20D5C512EE45F6B397 /* Headers */,
-				F2C72059874B0C1941CCD1AD56038BA3 /* Sources */,
-				909B4FE024526718543D64695AFE68F6 /* Frameworks */,
+				DEAF6B502B900C31C0044AAD88993952 /* Headers */,
+				11B4F11AA75D3CDF9807A350D8F0ED20 /* Sources */,
+				4FA59177B0158B505D0E373E9D0E8CE7 /* Frameworks */,
+				E6DFD1312AFED6A5645601FFAA3A59B9 /* Copy generated compatibility header */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2CEB6CAF8E9D6FFAF3B96EF071AA0322 /* PBXTargetDependency */,
-				7A785C48AEFE4614184B09C2D804B57B /* PBXTargetDependency */,
+			);
+			name = CBFlashyTabBarController;
+			productName = CBFlashyTabBarController;
+			productReference = 07D4E958BAD766CBA1D48DEB63D524C9 /* libCBFlashyTabBarController.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		930BFF37316253DD24D2622379CA6632 /* Pods-Final */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F25983D9B3503DF8454E43DC50ACCA72 /* Build configuration list for PBXNativeTarget "Pods-Final" */;
+			buildPhases = (
+				DB0404B1ABB1AD2FD0E0FE9F25EE104B /* Headers */,
+				0D20823FB5F3CFBADC4451BF08277952 /* Sources */,
+				9714F2440795FC2EAEF2761241ACDE2A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E830622411BF12FE6735422875156D93 /* PBXTargetDependency */,
+				656C09B7FF61030C2CD6D5E8A831D1C2 /* PBXTargetDependency */,
+				F210678C9BB86350BB912B6E72D5DF2F /* PBXTargetDependency */,
 			);
 			name = "Pods-Final";
 			productName = "Pods-Final";
@@ -287,7 +383,7 @@
 				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -295,10 +391,11 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 43D69AA4DB012B84D8889790B1BE429B /* Products */;
+			productRefGroup = 8A57DA479C95DDDC2FAA114D175075D0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				5737872A76EFCB2A97F445D9434307C7 /* CBFlashyTabBarController */,
 				E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */,
 				0C1885900810601510E0C632060FAF26 /* GooglePlaces */,
 				930BFF37316253DD24D2622379CA6632 /* Pods-Final */,
@@ -306,29 +403,65 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E6DFD1312AFED6A5645601FFAA3A59B9 /* Copy generated compatibility header */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
+				"${PODS_ROOT}/Headers/Public/CBFlashyTabBarController/CBFlashyTabBarController.modulemap",
+				"${PODS_ROOT}/Headers/Public/CBFlashyTabBarController/CBFlashyTabBarController-umbrella.h",
+			);
+			name = "Copy generated compatibility header";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
+				"${BUILT_PRODUCTS_DIR}/CBFlashyTabBarController-umbrella.h",
+				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/CBFlashyTabBarController/CBFlashyTabBarController.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/CBFlashyTabBarController/CBFlashyTabBarController-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		F2C72059874B0C1941CCD1AD56038BA3 /* Sources */ = {
+		0D20823FB5F3CFBADC4451BF08277952 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7FF95E760CB5ABCDDD80E1C5023E95E /* Pods-Final-dummy.m in Sources */,
+				6A7A148263D3CA4980EFE41F420B9A61 /* Pods-Final-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11B4F11AA75D3CDF9807A350D8F0ED20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				082FD1FE09571A028D772B55E440BAB2 /* CBFlashyTabBar.swift in Sources */,
+				C0176ADAA6FF0F262E1D94EDB82761C0 /* CBFlashyTabBarController-dummy.m in Sources */,
+				AA9D76249330F626F48371126D6289AB /* CBFlashyTabBarController.swift in Sources */,
+				3173E25A6E39C4987DD0E3281B35A754 /* CBTabBarButton.swift in Sources */,
+				8AEF93ED2B339C682E726805BB6D80E5 /* CBTabItemAnimation.swift in Sources */,
+				1127970003933EA756B4FF9B2FA0A07E /* CBTabItemBasicAnimation.swift in Sources */,
+				B55584C70F14EE2233BF11ABE4ED3BB2 /* CBTabItemDeselectAnimation.swift in Sources */,
+				EDEF5B9A8513A3EBDBAE67CA0D6F8432 /* CBTabItemSelectAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2CEB6CAF8E9D6FFAF3B96EF071AA0322 /* PBXTargetDependency */ = {
+		656C09B7FF61030C2CD6D5E8A831D1C2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GoogleMaps;
 			target = E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */;
-			targetProxy = 2A6C71BBA96253BC9534B458C5E75CC8 /* PBXContainerItemProxy */;
-		};
-		7A785C48AEFE4614184B09C2D804B57B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GooglePlaces;
-			target = 0C1885900810601510E0C632060FAF26 /* GooglePlaces */;
-			targetProxy = 86B025BB1A6E0C8230C7491494547980 /* PBXContainerItemProxy */;
+			targetProxy = 20949645189CBEB82EACB665307CD00E /* PBXContainerItemProxy */;
 		};
 		D42315111F400C0605ACCD6B5CAF2178 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -336,12 +469,48 @@
 			target = E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */;
 			targetProxy = 6EB1C2DD30E6564FC3135C9E8002D8F7 /* PBXContainerItemProxy */;
 		};
+		E830622411BF12FE6735422875156D93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CBFlashyTabBarController;
+			target = 5737872A76EFCB2A97F445D9434307C7 /* CBFlashyTabBarController */;
+			targetProxy = CD28AA23DF802ED52C4074CB139EA379 /* PBXContainerItemProxy */;
+		};
+		F210678C9BB86350BB912B6E72D5DF2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GooglePlaces;
+			target = 0C1885900810601510E0C632060FAF26 /* GooglePlaces */;
+			targetProxy = 7C75984D85D0231AD97D39676AA49BF7 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		4AE9FC8A852243DC9A2EFE9BA39BAC7B /* Debug */ = {
+		1974C5DB2C33BE2111C9694D207EC91D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C729F3714998C7C3F3D788777A06264 /* GooglePlaces.debug.xcconfig */;
+			baseConfigurationReference = 80AB8C6BD9A91255B98CA050A6A58FFB /* Pods-Final.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Final/Pods-Final.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4AA46832D8A16AA4E4811383B204D2A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C6EF67CF0DF7146982BEA2A7C712CCD /* GoogleMaps.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -355,86 +524,60 @@
 			};
 			name = Debug;
 		};
-		573B04AB9E058A1911353A22A780E993 /* Release */ = {
+		4C50E6BDAB7D8963B189417BC441CE21 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4658982FD89F2A77A672D9AFC716B28 /* GooglePlaces.release.xcconfig */;
+			baseConfigurationReference = E1CFFE44B80942F56B0FC8DB93BBDF29 /* CBFlashyTabBarController.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		729F383C03A7CB07046F2711DF0A5220 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3628BA6D289325DD5E007B0D54213ADE /* Pods-Final.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				MACH_O_TYPE = staticlib;
+				GCC_PREFIX_HEADER = "Target Support Files/CBFlashyTabBarController/CBFlashyTabBarController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MODULEMAP_FILE = Headers/Public/CBFlashyTabBarController/CBFlashyTabBarController.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = CBFlashyTabBarController;
+				PRODUCT_NAME = CBFlashyTabBarController;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		85F39B5DB2E235B673F44BAA24805517 /* Debug */ = {
+		5FD5E1F6AD12446929E9BE03612AB443 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B0F28FD83C78E1779762C2C7A6081991 /* Pods-Final.debug.xcconfig */;
+			baseConfigurationReference = E1CFFE44B80942F56B0FC8DB93BBDF29 /* CBFlashyTabBarController.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				MACH_O_TYPE = staticlib;
+				GCC_PREFIX_HEADER = "Target Support Files/CBFlashyTabBarController/CBFlashyTabBarController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MODULEMAP_FILE = Headers/Public/CBFlashyTabBarController/CBFlashyTabBarController.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = CBFlashyTabBarController;
+				PRODUCT_NAME = CBFlashyTabBarController;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		8CE5BA3EF4F6FABF028CE30772ECDA11 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E830DD9530F13E283DEC78352A2F03D /* GoogleMaps.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */ = {
+		6C61D818ACD3C2C116FED6A9C67E91B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -485,7 +628,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -498,23 +641,7 @@
 			};
 			name = Debug;
 		};
-		E1E452060D51DF935547186CE54B26CC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA12A18F12A10F6BE94B10C390987756 /* GoogleMaps.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		ECB437504DF805BD96CAABF97400B526 /* Release */ = {
+		7DC5F11AFBEAE473E8D3C24A2D11338D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -562,7 +689,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -574,14 +701,87 @@
 			};
 			name = Release;
 		};
+		907050E8ED96EF2CF04EC3D293E73BD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEA5C12E795825AA217C69BFF7D62D0B /* GooglePlaces.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C7565AEA7FCD8F66CAF546DC5AF1404F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C6EF67CF0DF7146982BEA2A7C712CCD /* GoogleMaps.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC85D7712D8EE6E340F053BC38E1FB63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEA5C12E795825AA217C69BFF7D62D0B /* GooglePlaces.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FC788CB177F645E4BC348A50EBE61B67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE6945C48BCF3CFFD2B2A42BC2BD0243 /* Pods-Final.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Final/Pods-Final.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0131D49447E561E53A7A361652F42A0D /* Build configuration list for PBXNativeTarget "Pods-Final" */ = {
+		13B5EBCBCA0A5EDC4FF540B92F2234AB /* Build configuration list for PBXNativeTarget "CBFlashyTabBarController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				85F39B5DB2E235B673F44BAA24805517 /* Debug */,
-				729F383C03A7CB07046F2711DF0A5220 /* Release */,
+				5FD5E1F6AD12446929E9BE03612AB443 /* Debug */,
+				4C50E6BDAB7D8963B189417BC441CE21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -589,8 +789,8 @@
 		2FC2AC47FDB0310285CE777F18CD1532 /* Build configuration list for PBXAggregateTarget "GooglePlaces" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4AE9FC8A852243DC9A2EFE9BA39BAC7B /* Debug */,
-				573B04AB9E058A1911353A22A780E993 /* Release */,
+				907050E8ED96EF2CF04EC3D293E73BD9 /* Debug */,
+				DC85D7712D8EE6E340F053BC38E1FB63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -598,8 +798,8 @@
 		46921981F609C5BA3CB72EC4EA41299D /* Build configuration list for PBXAggregateTarget "GoogleMaps" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E1E452060D51DF935547186CE54B26CC /* Debug */,
-				8CE5BA3EF4F6FABF028CE30772ECDA11 /* Release */,
+				4AA46832D8A16AA4E4811383B204D2A4 /* Debug */,
+				C7565AEA7FCD8F66CAF546DC5AF1404F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -607,8 +807,17 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */,
-				ECB437504DF805BD96CAABF97400B526 /* Release */,
+				6C61D818ACD3C2C116FED6A9C67E91B4 /* Debug */,
+				7DC5F11AFBEAE473E8D3C24A2D11338D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F25983D9B3503DF8454E43DC50ACCA72 /* Build configuration list for PBXNativeTarget "Pods-Final" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC788CB177F645E4BC348A50EBE61B67 /* Debug */,
+				1974C5DB2C33BE2111C9694D207EC91D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
