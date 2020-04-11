@@ -7,19 +7,26 @@
 //
 
 import UIKit
+import Foundation
 
-class YelpClientManager: NSObject {
-    
-    func fetchYelpBusinesses(latitude: Double, longitude: Double) {
+extension RecViewController{
+    //retrieve
+    func retrieveVenues(latitude: Double,
+                        longitude: Double,
+                        category: String,
+                        limit: Int,
+                        sortBy: String,
+                        locale: String,
+                        completionHandler: @escaping ([Business]?, Error?) -> Void){
         let apikey = "5wcjSDXbbYobQCuLpyiDDnJF5qq2K5Zb15TtATN4Fuc75Pcr6cuQWIKi-uBUJf4z_pJILtn3URPrP7Hutrp1wW3IZz5d6knTeoeSmXQnrEegzyE4lD079EVb-JeOXnYx"
-        let url = URL(string: "https://api.yelp.com/v3/businesses/search?latitude=\(latitude)&longitude=\(longitude)")
+        let url = URL(string: "https://api.yelp.com/v3/businesses/search?latitude=\(latitude)&longitude=\(longitude)&categories=\(category)&limit=\(limit)&sort_by=\(sortBy)&locale=\(locale)")
         var request = URLRequest(url: url!)
         request.setValue("Bearer \(apikey)", forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
 
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let err = error {
-                print(err.localizedDescription)
+                completionHandler(nil, err)
             }
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: [])
@@ -40,9 +47,8 @@ class YelpClientManager: NSObject {
                     
                     venues.append(venue)
                 }
-                for item in venues{
-                    print(item);
-                }
+                completionHandler(venues, nil)
+
             } catch {
                 print("caught")
             }

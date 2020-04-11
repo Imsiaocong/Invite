@@ -12,7 +12,7 @@
 // 1. To get the user location
 // 2. There is a bug in collectionview: when scrolling the cells, its background color gets deeper for some reason.
 // 3. Transfer information to MapViewController.
-// 4. Searchbar functionality
+// 4. Searchbar functionality - Implement table of valid categories so that users can select.
 
 import UIKit
 
@@ -27,9 +27,9 @@ class RecViewController: UIViewController {
     @IBOutlet weak var searchbar: UISearchBar!
     @IBOutlet weak var currentLocation: UILabel!
     @IBOutlet weak var time: UILabel!
-      
+    @IBOutlet weak var search: UITextField!
+    
     var timer = Timer()
-    let manager = YelpClientManager()
     var venues: [Business] = []
     
     override func viewDidLoad() {
@@ -38,6 +38,8 @@ class RecViewController: UIViewController {
         // Do any additional setup after loading the view.
         collectionView.dataSource = self;
         collectionView.delegate = self;
+        self.searchbar.searchTextField.delegate = self;
+        //searchbar.searchTextField.addTarget(self, action: #selector(updateVenues), for: .editingDidEndOnExit)
         collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
         searchbar.searchTextField.layer.cornerRadius = 18
         searchbar.searchTextField.layer.masksToBounds = true
@@ -55,7 +57,7 @@ class RecViewController: UIViewController {
         
         //
         //fetchYelpBusinesses(latitude: 40.6916002, longitude: -73.9846688)
-        retrieveVenues(latitude: 40.6916002, longitude: -73.9846688, category: "cafe", limit: 5, sortBy: "distance", locale: "en_US") { (response, error) in
+        retrieveVenues(latitude: 40.6916002, longitude: -73.9846688, category: "newamerican", limit: 5, sortBy: "distance", locale: "en_US") { (response, error) in
             if let response = response{
                 self.venues = response
                 DispatchQueue.main.async {
@@ -83,6 +85,20 @@ class RecViewController: UIViewController {
                                                   timeStyle: .short)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        retrieveVenues(latitude: 40.6916002, longitude: -73.9846688, category: "\(self.searchbar.searchTextField.text ?? "bars")", limit: 5, sortBy: "distance", locale: "en_US") { (response, error) in
+            if let response = response{
+                self.venues = response
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+        }
+        self.searchbar.searchTextField.resignFirstResponder()
+        return true
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "toMap"){
             if let nextViewController = segue.destination as? MapViewController{
@@ -95,7 +111,7 @@ class RecViewController: UIViewController {
     
 }
 
-extension RecViewController: UICollectionViewDataSource, UICollectionViewDelegate{
+extension RecViewController: UICollectionViewDataSource, UICollectionViewDelegate, UITextFieldDelegate{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1;
     }
@@ -127,51 +143,4 @@ extension RecViewController: UICollectionViewDataSource, UICollectionViewDelegat
         performSegue(withIdentifier: "toMap", sender: self)
     }
     
-}
-
-extension RecViewController{
-    //retrieve
-    func retrieveVenues(latitude: Double,
-                        longitude: Double,
-                        category: String,
-                        limit: Int,
-                        sortBy: String,
-                        locale: String,
-                        completionHandler: @escaping ([Business]?, Error?) -> Void){
-        let apikey = "5wcjSDXbbYobQCuLpyiDDnJF5qq2K5Zb15TtATN4Fuc75Pcr6cuQWIKi-uBUJf4z_pJILtn3URPrP7Hutrp1wW3IZz5d6knTeoeSmXQnrEegzyE4lD079EVb-JeOXnYx"
-        let url = URL(string: "https://api.yelp.com/v3/businesses/search?latitude=\(latitude)&longitude=\(longitude)&categories=\(category)&limit=\(limit)&sort_by=\(sortBy)&locale=\(locale)")
-        var request = URLRequest(url: url!)
-        request.setValue("Bearer \(apikey)", forHTTPHeaderField: "Authorization")
-        request.httpMethod = "GET"
-
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let err = error {
-                completionHandler(nil, err)
-            }
-            do {
-                let json = try JSONSerialization.jsonObject(with: data!, options: [])
-                //print(">>>>>", json, #line, "<<<<<<<<<")
-                guard let resp = json as? NSDictionary else {return}
-                guard let businesses = resp.value(forKey: "businesses") as? [NSDictionary] else {return}
-                var venues: [Business] = []
-                
-                for business in businesses{
-                    var venue = Business()
-                    venue.name = business.value(forKey: "name") as? String
-                    venue.id = business.value(forKey: "id") as? String
-                    venue.rating = business.value(forKey: "rating") as? Float
-                    venue.price = business.value(forKey: "price") as? String
-                    venue.isClosed = business.value(forKey: "is_closed") as? Bool
-                    let address = business.value(forKeyPath: "location.display_address") as? [String]
-                    venue.address = address?.joined(separator: "\n")
-                    
-                    venues.append(venue)
-                }
-                completionHandler(venues, nil)
-
-            } catch {
-                print("caught")
-            }
-        }.resume()
-    }
 }
