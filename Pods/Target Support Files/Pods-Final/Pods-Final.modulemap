@@ -1,0 +1,6 @@
+module Pods_Final {
+  umbrella header "Pods-Final-umbrella.h"
+
+  export *
+  module * { export * }
+}

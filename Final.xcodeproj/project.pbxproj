@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D48650E243EBC04009D4C99 /* RecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D48650D243EBC04009D4C99 /* RecViewController.swift */; };
 		3DB013B5243E87C10028645F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB013B4243E87C10028645F /* AppDelegate.swift */; };
 		3DB013B7243E87C10028645F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB013B6243E87C10028645F /* SceneDelegate.swift */; };
 		3DB013B9243E87C10028645F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB013B8243E87C10028645F /* MapViewController.swift */; };
@@ -17,6 +16,10 @@
 		3DB013CC243E87C10028645F /* FinalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB013CB243E87C10028645F /* FinalTests.swift */; };
 		3DB013D7243E87C10028645F /* FinalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB013D6243E87C10028645F /* FinalUITests.swift */; };
 		D2DFD4ABC202B4CD1DB4C3DA /* libPods-Final.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34CAEED74348430C519BD011 /* libPods-Final.a */; };
+		E40D3B322441530200A4EACA /* RecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40D3B312441530200A4EACA /* RecViewController.swift */; };
+		E4BA1E0D244179A600CC5E46 /* YelpClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA1E0C244179A600CC5E46 /* YelpClientManager.swift */; };
+		E4BA1E1024417D2100CC5E46 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA1E0F24417D2100CC5E46 /* Business.swift */; };
+		E4BA1E12244186FA00CC5E46 /* Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA1E11244186FA00CC5E46 /* Fetch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +41,6 @@
 
 /* Begin PBXFileReference section */
 		34CAEED74348430C519BD011 /* libPods-Final.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Final.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D48650D243EBC04009D4C99 /* RecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecViewController.swift; sourceTree = "<group>"; };
 		3DB013B1243E87C00028645F /* Final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Final.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB013B4243E87C10028645F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DB013B6243E87C10028645F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +57,10 @@
 		3DB013D8243E87C10028645F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67B074866F7EF178BD6AE5FC /* Pods-Final.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final.release.xcconfig"; path = "Target Support Files/Pods-Final/Pods-Final.release.xcconfig"; sourceTree = "<group>"; };
 		760B2699EAEBBE6774A29B97 /* Pods-Final.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final.debug.xcconfig"; path = "Target Support Files/Pods-Final/Pods-Final.debug.xcconfig"; sourceTree = "<group>"; };
+		E40D3B312441530200A4EACA /* RecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecViewController.swift; path = Final/Controller/RecViewController.swift; sourceTree = SOURCE_ROOT; };
+		E4BA1E0C244179A600CC5E46 /* YelpClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpClientManager.swift; sourceTree = "<group>"; };
+		E4BA1E0F24417D2100CC5E46 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		E4BA1E11244186FA00CC5E46 /* Fetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,10 +114,11 @@
 		3DB013B3243E87C10028645F /* Final */ = {
 			isa = PBXGroup;
 			children = (
+				E4BA1E0E24417CFE00CC5E46 /* Model */,
+				E4936AF02441737200C8AF54 /* API */,
+				E4936AEF2441733C00C8AF54 /* Controller */,
 				3DB013B4243E87C10028645F /* AppDelegate.swift */,
 				3DB013B6243E87C10028645F /* SceneDelegate.swift */,
-				3DB013B8243E87C10028645F /* MapViewController.swift */,
-				3D48650D243EBC04009D4C99 /* RecViewController.swift */,
 				3DB013BA243E87C10028645F /* Main.storyboard */,
 				3DB013BD243E87C10028645F /* Assets.xcassets */,
 				3DB013BF243E87C10028645F /* LaunchScreen.storyboard */,
@@ -145,6 +152,32 @@
 				67B074866F7EF178BD6AE5FC /* Pods-Final.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E4936AEF2441733C00C8AF54 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3DB013B8243E87C10028645F /* MapViewController.swift */,
+				E40D3B312441530200A4EACA /* RecViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E4936AF02441737200C8AF54 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E4BA1E0C244179A600CC5E46 /* YelpClientManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		E4BA1E0E24417CFE00CC5E46 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E4BA1E0F24417D2100CC5E46 /* Business.swift */,
+				E4BA1E11244186FA00CC5E46 /* Fetch.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FF94545EB9571375B4E6FD6B /* Frameworks */ = {
@@ -332,8 +365,11 @@
 			files = (
 				3DB013B9243E87C10028645F /* MapViewController.swift in Sources */,
 				3DB013B5243E87C10028645F /* AppDelegate.swift in Sources */,
+				E4BA1E0D244179A600CC5E46 /* YelpClientManager.swift in Sources */,
+				E4BA1E12244186FA00CC5E46 /* Fetch.swift in Sources */,
+				E4BA1E1024417D2100CC5E46 /* Business.swift in Sources */,
 				3DB013B7243E87C10028645F /* SceneDelegate.swift in Sources */,
-				3D48650E243EBC04009D4C99 /* RecViewController.swift in Sources */,
+				E40D3B322441530200A4EACA /* RecViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,15 +544,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PGC62Z29HJ;
 				INFOPLIST_FILE = Final/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.invite;
+				PRODUCT_BUNDLE_IDENTIFIER = com.imsiaocong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -526,15 +564,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PGC62Z29HJ;
 				INFOPLIST_FILE = Final/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.invite;
+				PRODUCT_BUNDLE_IDENTIFIER = com.imsiaocong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -543,7 +583,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PGC62Z29HJ;
 				INFOPLIST_FILE = FinalTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -564,7 +606,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PGC62Z29HJ;
 				INFOPLIST_FILE = FinalTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -585,6 +629,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PGC62Z29HJ;
 				INFOPLIST_FILE = FinalUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -604,6 +649,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PGC62Z29HJ;
 				INFOPLIST_FILE = FinalUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
