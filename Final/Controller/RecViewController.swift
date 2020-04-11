@@ -123,6 +123,9 @@ extension RecViewController: UICollectionViewDataSource, UICollectionViewDelegat
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toMap", sender: self)
+    }
     
 }
 
