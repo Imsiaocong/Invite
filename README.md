@@ -7,4 +7,5 @@
 - Di Wang
 - Ted Jeong
 ##### Flow Chart:
-![recommendation view](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![recommendation view](https://github.com/Imsiaocong/Invite/blob/master/flowchart/main.png)
+![map view](https://github.com/Imsiaocong/Invite/blob/master/flowchart/map.png)
