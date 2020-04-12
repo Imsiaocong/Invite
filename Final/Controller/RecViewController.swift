@@ -199,7 +199,6 @@ class RecViewController: UIViewController {
         self.ids = info
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "toMap"){
             if let nextViewController = segue.destination as? MapViewController{
