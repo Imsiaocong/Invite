@@ -9,12 +9,13 @@
 //
 // Di Wang
 // Todo:
-// 1. To get the user location
+// 1. To get the user location √
 // 2. There is a bug in collectionview: when scrolling the cells, its background color gets deeper for some reason.
 // 3. Transfer information to MapViewController.
 // 4. Searchbar functionality - Implement table of valid categories so that users can select.
 
 import UIKit
+import CoreLocation
 
 class CustomCell: UICollectionViewCell{
     @IBOutlet weak var name: UILabel!
@@ -36,6 +37,8 @@ class RecViewController: UIViewController {
     var venues: [Business] = []
     var reviews_: [Reviews] = []
     var ids: [Reviews] = []
+    var loc: [Double]  = []
+    var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +52,8 @@ class RecViewController: UIViewController {
         searchbar.searchTextField.layer.cornerRadius = 18
         searchbar.searchTextField.layer.masksToBounds = true
         
+        
+        
         //
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:#selector(self.tick) , userInfo: nil, repeats: true)
         
@@ -60,9 +65,20 @@ class RecViewController: UIViewController {
         searchbar.addSubview(blurView)
         searchbar.sendSubviewToBack(blurView)
         
+        
+        // location service
+        locationManager.requestWhenInUseAuthorization()
+        var currentLoc: CLLocation!
+        if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+        CLLocationManager.authorizationStatus() == .authorizedAlways) {
+            currentLoc = locationManager.location
+            self.loc = [currentLoc.coordinate.latitude,currentLoc.coordinate.longitude]
+        }
+        
         //
         // fetchYelpBusinesses(latitude: 40.6916002, longitude: -73.9846688)
-        retrieveVenues(latitude: 40.6916002, longitude: -73.9846688, category: "newamerican", limit: 8, sortBy: "rating", locale: "en_US") { (response, error) in
+        //
+        retrieveVenues(latitude: self.loc[0], longitude: self.loc[1], category: "newamerican", limit: 8, sortBy: "rating", locale: "en_US") { (response, error) in
             if let response = response{
                 self.venues = response
                 
@@ -84,6 +100,10 @@ class RecViewController: UIViewController {
                 }
             }
         }
+        
+        retreiveCityName(latitude: self.loc[0], longitude: self.loc[1]) { (response) in
+            self.currentLocation.text = response
+        }
     }
     
 
@@ -104,8 +124,9 @@ class RecViewController: UIViewController {
                                                   timeStyle: .short)
     }
     
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        retrieveVenues(latitude: 40.6916002, longitude: -73.9846688, category: "\(self.searchbar.searchTextField.text ?? "bars")", limit: 8, sortBy: "rating", locale: "en_US") { (response, error) in
+        retrieveVenues(latitude: self.loc[0], longitude: self.loc[1], category: "\(self.searchbar.searchTextField.text ?? "bars")", limit: 8, sortBy: "rating", locale: "en_US") { (response, error) in
             if let response = response{
                 self.venues = response
                 
@@ -139,7 +160,7 @@ class RecViewController: UIViewController {
         let currentPage = Int(ceil(x/w))
         // Do whatever with currentPage.
         //
-        retrieveVenues(latitude: 40.6916002, longitude: -73.9846688, category: "\(self.searchbar.searchTextField.text ?? "bars")", limit: 8, sortBy: "rating", locale: "en_US") { (response, error) in
+        retrieveVenues(latitude: self.loc[0], longitude: self.loc[1], category: "\(self.searchbar.searchTextField.text ?? "bars")", limit: 8, sortBy: "rating", locale: "en_US") { (response, error) in
             if let response = response{
                 self.venues = response
                 
@@ -178,7 +199,6 @@ class RecViewController: UIViewController {
         self.ids = info
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "toMap"){
             if let nextViewController = segue.destination as? MapViewController{
@@ -187,6 +207,17 @@ class RecViewController: UIViewController {
         }
     }
     
+    // get city
+    func retreiveCityName(latitude: Double, longitude: Double, completionHandler: @escaping (String?) -> Void)
+    {
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(CLLocation(latitude: latitude, longitude: longitude), completionHandler:
+        {
+            placeMarks, error in
+
+            completionHandler(placeMarks?.first?.locality)
+         })
+    }
     
     
 }
@@ -239,9 +270,4 @@ extension RecViewController: UICollectionViewDataSource, UICollectionViewDelegat
            }
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "toMap", sender: self)
-    }
-    
 }
