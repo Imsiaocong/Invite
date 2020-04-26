@@ -72,13 +72,14 @@ class RecViewController: UIViewController {
         if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
         CLLocationManager.authorizationStatus() == .authorizedAlways) {
             currentLoc = locationManager.location
-            self.loc = [currentLoc.coordinate.latitude,currentLoc.coordinate.longitude]
+            //self.loc = [currentLoc.coordinate.latitude,currentLoc.coordinate.longitude]
+            self.loc = [40.7307370,-73.9765269]
         }
         
         //
         // fetchYelpBusinesses(latitude: 40.6916002, longitude: -73.9846688)
         //
-        retrieveVenues(latitude: self.loc[0], longitude: self.loc[1], category: "newamerican", limit: 8, sortBy: "rating", locale: "en_US") { (response, error) in
+        retrieveVenues(latitude: self.loc[0], longitude: self.loc[1], category: "newamerican", limit: 8, sortBy: "best_match", locale: "en_US") { (response, error) in
             if let response = response{
                 self.venues = response
                 
@@ -126,7 +127,7 @@ class RecViewController: UIViewController {
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        retrieveVenues(latitude: self.loc[0], longitude: self.loc[1], category: "\(self.searchbar.searchTextField.text ?? "bars")", limit: 8, sortBy: "rating", locale: "en_US") { (response, error) in
+        retrieveVenues(latitude: self.loc[0], longitude: self.loc[1], category: "\(self.searchbar.searchTextField.text ?? "bars")", limit: 8, sortBy: "best_match", locale: "en_US") { (response, error) in
             if let response = response{
                 self.venues = response
                 
@@ -160,7 +161,7 @@ class RecViewController: UIViewController {
         let currentPage = Int(ceil(x/w))
         // Do whatever with currentPage.
         //
-        retrieveVenues(latitude: self.loc[0], longitude: self.loc[1], category: "\(self.searchbar.searchTextField.text ?? "bars")", limit: 8, sortBy: "rating", locale: "en_US") { (response, error) in
+        retrieveVenues(latitude: self.loc[0], longitude: self.loc[1], category: "\(self.searchbar.searchTextField.text ?? "bars")", limit: 8, sortBy: "best_match", locale: "en_US") { (response, error) in
             if let response = response{
                 self.venues = response
                 
