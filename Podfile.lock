@@ -1,4 +1,20 @@
 PODS:
+  - AFNetworking (4.0.0):
+    - AFNetworking/NSURLSession (= 4.0.0)
+    - AFNetworking/Reachability (= 4.0.0)
+    - AFNetworking/Security (= 4.0.0)
+    - AFNetworking/Serialization (= 4.0.0)
+    - AFNetworking/UIKit (= 4.0.0)
+  - AFNetworking/NSURLSession (4.0.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.0)
+  - AFNetworking/Security (4.0.0)
+  - AFNetworking/Serialization (4.0.0)
+  - AFNetworking/UIKit (4.0.0):
+    - AFNetworking/NSURLSession
+  - expanding-collection (3.1.0)
   - GoogleMaps (3.8.0):
     - GoogleMaps/Maps (= 3.8.0)
   - GoogleMaps/Base (3.8.0)
@@ -8,18 +24,24 @@ PODS:
     - GoogleMaps/Base (= 3.8.0)
 
 DEPENDENCIES:
+  - AFNetworking (~> 4.0)
+  - expanding-collection
   - GoogleMaps
   - GooglePlaces
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - expanding-collection
     - GoogleMaps
     - GooglePlaces
 
 SPEC CHECKSUMS:
+  AFNetworking: d9fdf484a3c723ec3c558a41cc5754c7e845ee77
+  expanding-collection: 7eb1fc48c6ec5e00c8887fe46c595c31b81b578a
   GoogleMaps: 7c8d66d70e4e8c300f43a7219d8fdaad7b325a9a
   GooglePlaces: d5f70c3e9e427964fdeca1301a665d276ccd8754
 
-PODFILE CHECKSUM: bcc71aa77ad2f91fb5193f3247ab5d08e78ca6c8
+PODFILE CHECKSUM: 9e160336fba7ecabb06b7f47ba58b4bf59b36f9f
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.8.4
