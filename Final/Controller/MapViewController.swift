@@ -14,12 +14,32 @@ import CoreLocation
 let apikey = "AIzaSyAu-KEXCvMeRHXD7LLbjH-IrVIwdezI2vE";
 
 class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
-   
+    var markerArray = [GMSMarker]()
+    var mark = GMSMarker()
+    var name = ""
+    var nameArray = [NSString]()
+    @IBOutlet weak var search: UISearchBar! // link later
     @IBOutlet weak var topBar: UIView!
     @IBOutlet weak var addButton: UIButton!
+    
+    
+    
+    // this function actually removes things !!
+    // i just dont wanna relink it ;)
     @IBAction func Add(_sender: Any) {
 
+        
+        
+        
+        
         // search bar appears and user can query
+        if ( search.isHidden ){
+            search.isHidden = false
+        }
+        else{
+            search.isHidden = true
+        }
+        
     }
     @IBOutlet weak var mapView: GMSMapView!
 
@@ -28,10 +48,20 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+      
         self.view = mapView
         mapView.delegate = self
+        search.isHidden = true
+        
+        // get data from rec
+        self.mark.position = CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!)
+        self.mark.title = name
+        self.name = name
+        nameArray.append(name)
+        mark.map = mapView
+        markArray.append(mark)
+        
+      
         self.view.addSubview(topBar)
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -40,6 +70,25 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
 //        locationManager.startUpdatingLocation()
   
       
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        for name in nameArray{
+            int count = 0
+            for marker on markerArray{
+                
+                if name == marker.title{
+                    marker.map = nil
+                    markerArray.remove(at: count)
+                    nameArray.remove(ar: count)
+                    self.searchbar.searchTextField.resignFirstResponder()
+                    return true
+                }
+                count += 1
+            }
+        }
+        // no marker found
+        
     }
     func locationManager(_manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
           
