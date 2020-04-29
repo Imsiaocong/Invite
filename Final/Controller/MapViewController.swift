@@ -33,6 +33,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITextFieldDelega
         
         // search bar appears and user can query
         if ( search.isHidden ){
+            search.becomeFirstResponder()
             search.searchTextField.text?.removeAll()
             search.isHidden = false
             enter.isHidden = false
@@ -70,14 +71,22 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITextFieldDelega
         search.becomeFirstResponder()
         self.view.addSubview(mapView)
         self.view.addSubview(topBar)
-        // hard coded until rec view passes data
-        let lat = 40.73
-        let lon = -73.95
-        let name = "john"
-
-        placeMark(latitude: lat, longitude: lon, title: name)
-      
-     
+        
+        let latitude = [40.73,40.74,40.734,40.727,40.75]
+        let longitude = [-73.95,-73.99,-73.994,-73.9918,-73.9968]
+        let title = ["Steak House", "Ribalta","Vapiano","Katz Delicatessen","Westville"]
+        // hard coded to immitate user data
+        var i = 0
+        for lati in latitude{
+            placeMark(latitude: lati, longitude: longitude[i], title: title[i])
+            i += 1
+        }
+        // when rec view passes data
+//        self.lat = lat
+//        self.lon = lon
+//        self.name = name
+//        placeMark(latitude: lat, longitude: lon, title: name)
+        
         self.locationManager.delegate = self
         self.locationManager.requestWhenInUseAuthorization()
         
@@ -202,7 +211,7 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     mapView.camera = GMSCameraPosition(
       target: location.coordinate,
-      zoom: 12,
+      zoom: 13,
       bearing: 0,
       viewingAngle: 0)
   }
