@@ -29,9 +29,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     @IBAction func Add(_sender: Any) {
 
         
-        
-        
-        
         // search bar appears and user can query
         if ( search.isHidden ){
             search.isHidden = false
