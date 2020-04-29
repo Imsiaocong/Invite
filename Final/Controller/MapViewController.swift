@@ -16,8 +16,9 @@ let apikey = "AIzaSyAu-KEXCvMeRHXD7LLbjH-IrVIwdezI2vE";
 class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
     var markerArray = [GMSMarker]()
     var mark = GMSMarker()
-    var name = String()
-    var nameArray = [String]()
+    var name:NSString = ""
+    var nameArray = [NSString]()
+
     @IBOutlet weak var search: UISearchBar! // link later
     @IBOutlet weak var topBar: UIView!
     @IBOutlet weak var addButton: UIButton!
@@ -52,7 +53,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         
         // get data from rec
         self.mark.position = CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!)
-        self.mark.title = name
+        self.mark.title = name as String
         self.name = name
         nameArray.append(name)
         mark.map = mapView
