@@ -65,7 +65,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         
         // get data from rec
         mark.position = CLLocationCoordinate2D(latitude: 40.00, longitude: -73.90)
-//        self.mark.position = CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!)
+//      self.mark.position = CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!)
         mark.title = name
         nameArray.append(name)
         mark.map = mapView
