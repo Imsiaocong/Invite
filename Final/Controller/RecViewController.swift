@@ -72,8 +72,8 @@ class RecViewController: UIViewController {
         if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
         CLLocationManager.authorizationStatus() == .authorizedAlways) {
             currentLoc = locationManager.location
-            //self.loc = [currentLoc.coordinate.latitude,currentLoc.coordinate.longitude]
-            self.loc = [40.7307370,-73.9765269]
+            self.loc = [currentLoc.coordinate.latitude,currentLoc.coordinate.longitude]
+            //self.loc = [40.7307370,-73.9765269] // Use this when using emulator
         }
         
         //
@@ -82,7 +82,7 @@ class RecViewController: UIViewController {
         retrieveVenues(latitude: self.loc[0], longitude: self.loc[1], category: "newamerican", limit: 8, sortBy: "best_match", locale: "en_US") { (response, error) in
             if let response = response{
                 self.venues = response
-                
+                print(response)
                 //
                 // retrieve reviews
                 //
@@ -124,7 +124,6 @@ class RecViewController: UIViewController {
                                                   dateStyle: .long,
                                                   timeStyle: .short)
     }
-    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         retrieveVenues(latitude: self.loc[0], longitude: self.loc[1], category: "\(self.searchbar.searchTextField.text ?? "bars")", limit: 8, sortBy: "best_match", locale: "en_US") { (response, error) in
@@ -204,6 +203,7 @@ class RecViewController: UIViewController {
         if (segue.identifier == "toMap"){
             if let nextViewController = segue.destination as? MapViewController{
                 // transfer info from here
+                
             }
         }
     }

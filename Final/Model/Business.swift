@@ -17,4 +17,5 @@ struct Business {
     var distance: Double?
     var address: String?
     var image_address: String?
+    var coordinates:[String:Double]?
 }
