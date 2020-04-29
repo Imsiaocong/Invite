@@ -18,6 +18,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     var mark = GMSMarker()
     var name:NSString = ""
     var nameArray = [NSString]()
+
     @IBOutlet weak var search: UISearchBar! // link later
     @IBOutlet weak var topBar: UIView!
     @IBOutlet weak var addButton: UIButton!
@@ -71,8 +72,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         for name in nameArray{
-            int count = 0
-            for marker on markerArray{
+            let count = 0
+            for marker in markerArray{
                 
                 if name == marker.title{
                     marker.map = nil
@@ -163,7 +164,3 @@ extension MapViewController{
       }
 
 }
-
-
-
-
