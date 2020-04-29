@@ -74,7 +74,27 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITextFieldDelega
         let lat = 40.73
         let lon = -73.95
         let name = "john"
+<<<<<<< HEAD
         placeMark(latitude: lat, longitude: lon, title: name)
+=======
+        let mark = GMSMarker()
+        
+        // get data from rec
+        mark.position = CLLocationCoordinate2D(latitude: 40.00, longitude: -73.90)
+//      self.mark.position = CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!)
+        mark.title = name
+        nameArray.append(name)
+        mark.map = mapView
+        markerArray.append(mark)
+     
+        self.locationManager.delegate = self
+        self.locationManager.requestWhenInUseAuthorization()
+        
+//
+        self.locationManager.startUpdatingLocation()
+//
+      
+>>>>>>> 0970f91ac37716341d5e602d3cb1cfa0bf723861
     }
     func placeMark(latitude: Double, longitude: Double, title: String){
           
