@@ -16,8 +16,8 @@ let apikey = "AIzaSyAu-KEXCvMeRHXD7LLbjH-IrVIwdezI2vE";
 class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
     var markerArray = [GMSMarker]()
     var mark = GMSMarker()
-    var name = ""
-    var nameArray = [NSString]()
+    var name = String()
+    var nameArray = [String]()
     @IBOutlet weak var search: UISearchBar! // link later
     @IBOutlet weak var topBar: UIView!
     @IBOutlet weak var addButton: UIButton!
@@ -71,8 +71,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         for name in nameArray{
-            int count = 0
-            for marker on markerArray{
+            let count = 0
+            for marker in markerArray{
                 
                 if name == marker.title{
                     marker.map = nil
@@ -163,7 +163,3 @@ extension MapViewController{
       }
 
 }
-
-
-
-
