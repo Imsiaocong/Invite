@@ -39,6 +39,7 @@ class RecViewController: UIViewController {
     var ids: [Reviews] = []
     var loc: [Double]  = []
     var locationManager = CLLocationManager()
+    var indexPath: NSIndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,7 +83,7 @@ class RecViewController: UIViewController {
         retrieveVenues(latitude: self.loc[0], longitude: self.loc[1], category: "newamerican", limit: 8, sortBy: "best_match", locale: "en_US") { (response, error) in
             if let response = response{
                 self.venues = response
-                print(response)
+                //print(response)
                 //
                 // retrieve reviews
                 //
@@ -200,11 +201,12 @@ class RecViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "toMap"){
-            if let nextViewController = segue.destination as? MapViewController{
-                // transfer info from here
-                
-            }
+        if segue.identifier == "mapview" {
+            let vc = segue.destination as! MapViewController
+            // Feeding data into mapview
+            vc.name = self.venues[self.indexPath!.row].name!
+            vc.lat = self.venues[self.indexPath!.row].coordinates!["latitude"]!
+            vc.lon = self.venues[self.indexPath!.row].coordinates!["longitude"]!
         }
     }
     
@@ -270,5 +272,10 @@ extension RecViewController: UICollectionViewDataSource, UICollectionViewDelegat
                }
            }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.indexPath = indexPath as NSIndexPath
+        performSegue(withIdentifier: "mapview", sender: indexPath)
     }
 }
