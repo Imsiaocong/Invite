@@ -11,19 +11,20 @@ import GoogleMaps
 import GooglePlaces
 import CoreLocation
 
-let apikey = "AIzaSyAu-KEXCvMeRHXD7LLbjH-IrVIwdezI2vE";
 
-class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
+class MapViewController: UIViewController, GMSMapViewDelegate, UITextFieldDelegate, UISearchBarDelegate {
     var markerArray = [GMSMarker]()
-    var mark = GMSMarker()
-    var name:NSString = ""
-    var nameArray = [NSString]()
-
-    @IBOutlet weak var search: UISearchBar! // link later
+    var searchActive = true
+    var name = String()
+    var lat = Double()
+    var lon = Double()
+    var nameArray = [String]()
+    var didFindMyLocation = false
+    @IBOutlet weak var search: UISearchBar!
     @IBOutlet weak var topBar: UIView!
     @IBOutlet weak var addButton: UIButton!
     
-    
+    @IBOutlet weak var enter: UIButton!
     
     // this function actually removes things !!
     // i just dont wanna relink it ;)
@@ -32,74 +33,113 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         
         // search bar appears and user can query
         if ( search.isHidden ){
+            search.becomeFirstResponder()
+            search.searchTextField.text?.removeAll()
             search.isHidden = false
+            enter.isHidden = false
+            addButton.setTitle("Cancel", for: .normal)
         }
         else{
             search.isHidden = true
+            enter.isHidden = true
+            addButton.setTitle("Edit", for: .normal)
         }
         
     }
     @IBOutlet weak var mapView: GMSMapView!
-
-    var locationManager = CLLocationManager()
+    let locationManager = CLLocationManager()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        self.view = mapView
-        mapView.delegate = self
-        search.isHidden = true
-        
-        // get data from rec
-        self.mark.position = CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!)
-        self.mark.title = name as String
-        self.name = name
-        nameArray.append(name)
-        mark.map = mapView
-        markArray.append(mark)
-        
-      
-        self.view.addSubview(topBar)
+        search.showsCancelButton = false
+        search.delegate = self
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        
-
-//        locationManager.startUpdatingLocation()
-  
-      
-    }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        for name in nameArray{
-            let count = 0
-            for marker in markerArray{
-                
-                if name == marker.title{
-                    marker.map = nil
-                    markerArray.remove(at: count)
-                    nameArray.remove(ar: count)
-                    self.searchbar.searchTextField.resignFirstResponder()
-                    return true
-                }
-                count += 1
-            }
+        if CLLocationManager.locationServicesEnabled() {
+          locationManager.requestLocation()
+          mapView.isMyLocationEnabled = true
+          mapView.settings.myLocationButton = true
+        } else {
+          locationManager.requestWhenInUseAuthorization()
         }
-        // no marker found
+        mapView.delegate = self
+        search.searchTextField.delegate = self
+        search.isHidden = true
+        enter.isHidden = true
+        mapView.addSubview(search)
+        mapView.addSubview(enter)
+        search.becomeFirstResponder()
+        self.view.addSubview(mapView)
+        self.view.addSubview(topBar)
         
+        let latitude = [40.73,40.74,40.734,40.727,40.75]
+        let longitude = [-73.95,-73.99,-73.994,-73.9918,-73.9968]
+        let title = ["Steak House", "Ribalta","Vapiano","Katz Delicatessen","Westville"]
+        // hard coded to immitate user data
+        var i = 0
+        for lati in latitude{
+            placeMark(latitude: lati, longitude: longitude[i], title: title[i])
+            i += 1
+        }
+        // when rec view passes data
+//        self.lat = lat
+//        self.lon = lon
+//        self.name = name
+//        placeMark(latitude: lat, longitude: lon, title: name)
+        
+        self.locationManager.delegate = self
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        self.locationManager.startUpdatingLocation()
+
     }
-    func locationManager(_manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func placeMark(latitude: Double, longitude: Double, title: String){
           
-        let location = locations.last
-   
-            let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude:(location?.coordinate.longitude)!, zoom:14)
-            mapView.animate(to: camera)
-            let marker = GMSMarker()
-            marker.position = CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!)
-            marker.map = mapView
-          self.locationManager.stopUpdatingLocation()
-      
+            let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+             let marker = GMSMarker(position: location)
+             marker.title = title
+             marker.map = mapView
+             markerArray.append(marker)
+             nameArray.append(marker.title!)
+     }
+    @IBAction func doneWithSearch(_ sender: Any) {
+        addButton.setTitle("Edit", for: .normal)
+        search(searchText: self.search.searchTextField.text!)
     }
+    func search(searchText: String) {
+        var temp = searchText
+        self.searchActive = true;
+        self.search.showsCancelButton = true
+        let key = searchText
+        var count = 0
+        for marker in markerArray{
+            
+            if (marker.title!.caseInsensitiveCompare(key) == .orderedSame) {
+                temp = marker.title!
+                marker.map = nil
+                markerArray.remove(at: count)
+                nameArray.remove(at: count)
+                search.isHidden = true
+                enter.isHidden = true
+            search.showsCancelButton = false
+            self.search.searchTextField.resignFirstResponder()
+            let alert = UIAlertController(title: "", message: temp + " was removed from the map", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+            }
+            count += 1
+        }
+    search.isHidden = true
+    enter.isHidden = true
+    search.showsCancelButton = false
+    let alert = UIAlertController(title: "", message: temp + " could not be found.", preferredStyle: UIAlertController.Style.alert)
+    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+    self.present(alert, animated: true, completion: nil)
+    self.search.searchTextField.resignFirstResponder()
+    }
+
+    // for future functionalities
     func fetchPlace(coordinate: CLLocationCoordinate2D, radius: Double, name : String){
         let  url = URL( string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=\(apikey)&location=\(coordinate.latitude),\(coordinate.longitude)&radius=\(radius)&rankby=prominence&sensor=true")
         let request = URLRequest(url: url!)
@@ -148,19 +188,39 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
 
     
 }
-extension MapViewController{
-      // 2
-      func locationManager(_manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        // 3
-        guard status == .authorizedWhenInUse else {
-          return
-        }
-        // 4
-        locationManager.startUpdatingLocation()
+extension MapViewController: CLLocationManagerDelegate {
+   
+  func locationManager(
+    _ manager: CLLocationManager,
+    didChangeAuthorization status: CLAuthorizationStatus
+  ) {
+    // 3
+    guard status == .authorizedWhenInUse else {
+      return
+    }
 
-        //5
-        mapView.isMyLocationEnabled = true
-        mapView.settings.myLocationButton = true
-      }
+    locationManager.requestLocation()
+    mapView.isMyLocationEnabled = true
+    mapView.settings.myLocationButton = true
+  }
+  func locationManager(
+    _ manager: CLLocationManager,
+    didUpdateLocations locations: [CLLocation]) {
+    guard let location = locations.first else {
+      return
+    }
+    mapView.camera = GMSCameraPosition(
+      target: location.coordinate,
+      zoom: 13,
+      bearing: 0,
+      viewingAngle: 0)
+  }
 
+  // 8
+  func locationManager(
+    _ manager: CLLocationManager,
+    didFailWithError error: Error
+  ) {
+    print(error)
+  }
 }

@@ -46,6 +46,7 @@ extension RecViewController{
                     let address = business.value(forKeyPath: "location.display_address") as? [String]
                     venue.address = address?.joined(separator: "\n")
                     venue.image_address = business.value(forKey: "image_url") as? String
+                    venue.coordinates = business.value(forKey: "coordinates") as? [String:Double]
                     
                     venues.append(venue)
                 }
