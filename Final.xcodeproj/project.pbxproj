@@ -544,14 +544,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PGC62Z29HJ;
+				DEVELOPMENT_TEAM = YHK958TSF5;
 				INFOPLIST_FILE = Final/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.imsiaocong;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -564,14 +564,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PGC62Z29HJ;
+				DEVELOPMENT_TEAM = YHK958TSF5;
 				INFOPLIST_FILE = Final/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.imsiaocong;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
