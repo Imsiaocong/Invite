@@ -32,6 +32,8 @@ class RecViewController: UIViewController {
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var user_review: UILabel!
     @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var reviewView: UIView!
+    @IBOutlet weak var menu: UIView!
     
     var timer = Timer()
     var venues: [Business] = []
@@ -65,6 +67,15 @@ class RecViewController: UIViewController {
         blurView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         searchbar.addSubview(blurView)
         searchbar.sendSubviewToBack(blurView)
+        //
+        let regularBlur02 = UIBlurEffect(style: .regular)
+        let blurView02 = UIVisualEffectView(effect: regularBlur02)
+        blurView02.frame = reviewView.bounds
+        blurView02.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        blurView02.layer.cornerRadius = 16
+        blurView02.layer.masksToBounds = true
+        reviewView.addSubview(blurView02)
+        reviewView.sendSubviewToBack(blurView02)
         
         
         // location service
@@ -73,8 +84,8 @@ class RecViewController: UIViewController {
         if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
         CLLocationManager.authorizationStatus() == .authorizedAlways) {
             currentLoc = locationManager.location
-            self.loc = [currentLoc.coordinate.latitude,currentLoc.coordinate.longitude]
-            //self.loc = [40.7307370,-73.9765269] // Use this when using emulator
+            //self.loc = [currentLoc.coordinate.latitude,currentLoc.coordinate.longitude]
+            self.loc = [40.7307370,-73.9765269] // Use this when using emulator
         }
         
         //
@@ -221,8 +232,59 @@ class RecViewController: UIViewController {
             completionHandler(placeMarks?.first?.locality)
          })
     }
+    @IBAction func burger(_ sender: Any) {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.menu.frame = self.menu.frame.offsetBy( dx: -96, dy: 0);
+        }) { (finish) in
+            
+        }
+    }
+    @IBAction func choiceOne(_ sender: Any) {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.menu.frame = self.menu.frame.offsetBy( dx: 96, dy: 0);
+        }) { (finish) in
+            self.reload(inp: "bars")
+        }
+    }
+    @IBAction func choiceTwo(_ sender: Any) {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.menu.frame = self.menu.frame.offsetBy( dx: 96, dy: 0);
+        }) { (finish) in
+            self.reload(inp: "gyms")
+        }
+    }
+    @IBAction func choiceThree(_ sender: Any) {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.menu.frame = self.menu.frame.offsetBy( dx: 96, dy: 0);
+        }) { (finish) in
+            self.reload(inp: "coffee")
+        }
+    }
     
-    
+    func reload(inp: String){
+        retrieveVenues(latitude: self.loc[0], longitude: self.loc[1], category: inp, limit: 8, sortBy: "best_match", locale: "en_US") { (response, error) in
+            if let response = response{
+                self.venues = response
+                //print(response)
+                //
+                // retrieve reviews
+                //
+                self.retrieveReviews(id: self.venues[0].id! ) { (response_, error) in
+                    //print(self.ids[0])
+                    if let response = response_{
+                        self.reviews_ = response
+                        //print(response)
+                        DispatchQueue.main.async {
+                            self.user_review.text = self.reviews_[0].text
+                        }
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+        }
+    }
 }
 
 extension RecViewController: UICollectionViewDataSource, UICollectionViewDelegate, UITextFieldDelegate{
