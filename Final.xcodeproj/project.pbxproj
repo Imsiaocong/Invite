@@ -18,6 +18,8 @@
 		D2DFD4ABC202B4CD1DB4C3DA /* libPods-Final.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34CAEED74348430C519BD011 /* libPods-Final.a */; };
 		E40D3B322441530200A4EACA /* RecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40D3B312441530200A4EACA /* RecViewController.swift */; };
 		E42DE92F244267B6008CAD11 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DE92E244267B6008CAD11 /* Reviews.swift */; };
+		E44A49A7246230D3009167EA /* CustomInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A49A5246230D3009167EA /* CustomInfoWindow.swift */; };
+		E44A49A8246230D3009167EA /* CustomInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E44A49A6246230D3009167EA /* CustomInfoWindow.xib */; };
 		E4BA1E0D244179A600CC5E46 /* YelpClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA1E0C244179A600CC5E46 /* YelpClientManager.swift */; };
 		E4BA1E1024417D2100CC5E46 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA1E0F24417D2100CC5E46 /* Business.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +61,8 @@
 		760B2699EAEBBE6774A29B97 /* Pods-Final.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final.debug.xcconfig"; path = "Target Support Files/Pods-Final/Pods-Final.debug.xcconfig"; sourceTree = "<group>"; };
 		E40D3B312441530200A4EACA /* RecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecViewController.swift; path = Final/Controller/RecViewController.swift; sourceTree = SOURCE_ROOT; };
 		E42DE92E244267B6008CAD11 /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
+		E44A49A5246230D3009167EA /* CustomInfoWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInfoWindow.swift; sourceTree = "<group>"; };
+		E44A49A6246230D3009167EA /* CustomInfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomInfoWindow.xib; sourceTree = "<group>"; };
 		E4BA1E0C244179A600CC5E46 /* YelpClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpClientManager.swift; sourceTree = "<group>"; };
 		E4BA1E0F24417D2100CC5E46 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +122,8 @@
 				E4936AF02441737200C8AF54 /* API */,
 				E4936AEF2441733C00C8AF54 /* Controller */,
 				3DB013B4243E87C10028645F /* AppDelegate.swift */,
+				E44A49A5246230D3009167EA /* CustomInfoWindow.swift */,
+				E44A49A6246230D3009167EA /* CustomInfoWindow.xib */,
 				3DB013B6243E87C10028645F /* SceneDelegate.swift */,
 				3DB013BA243E87C10028645F /* Main.storyboard */,
 				3DB013BD243E87C10028645F /* Assets.xcassets */,
@@ -294,6 +300,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E44A49A8246230D3009167EA /* CustomInfoWindow.xib in Resources */,
 				3DB013C1243E87C10028645F /* LaunchScreen.storyboard in Resources */,
 				3DB013BE243E87C10028645F /* Assets.xcassets in Resources */,
 				3DB013BC243E87C10028645F /* Main.storyboard in Resources */,
@@ -363,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E44A49A7246230D3009167EA /* CustomInfoWindow.swift in Sources */,
 				3DB013B9243E87C10028645F /* MapViewController.swift in Sources */,
 				3DB013B5243E87C10028645F /* AppDelegate.swift in Sources */,
 				E4BA1E0D244179A600CC5E46 /* YelpClientManager.swift in Sources */,

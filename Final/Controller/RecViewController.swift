@@ -90,8 +90,8 @@ class RecViewController: UIViewController {
         if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
         CLLocationManager.authorizationStatus() == .authorizedAlways) {
             currentLoc = locationManager.location
-            //self.loc = [currentLoc.coordinate.latitude,currentLoc.coordinate.longitude]
-            self.loc = [40.7307370,-73.9765269] // Use this when using emulator
+            self.loc = [currentLoc.coordinate.latitude,currentLoc.coordinate.longitude]
+            //self.loc = [40.7307370,-73.9765269] // Use this when using emulator
         }
         
         //
