@@ -67,6 +67,12 @@ class RecViewController: UIViewController {
         blurView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         searchbar.addSubview(blurView)
         searchbar.sendSubviewToBack(blurView)
+        UIView.animate(withDuration: 0.2, delay: 0.5, options: .curveEaseIn, animations: {
+            self.searchbar.frame = self.searchbar.frame.offsetBy( dx: 0, dy: 62);
+        }) { (finish) in
+            
+        }
+        
         //
         let regularBlur02 = UIBlurEffect(style: .regular)
         let blurView02 = UIVisualEffectView(effect: regularBlur02)
