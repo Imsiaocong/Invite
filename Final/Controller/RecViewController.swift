@@ -144,7 +144,7 @@ class RecViewController: UIViewController {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        retrieveVenues(latitude: self.loc[0], longitude: self.loc[1], category: "\(self.searchbar.searchTextField.text ?? "bars")", limit: 8, sortBy: "best_match", locale: "en_US") { (response, error) in
+        retrieveVenues(latitude: self.loc[0], longitude: self.loc[1], category: "\(self.searchbar.searchTextField.text ?? "newamerican")", limit: 8, sortBy: "best_match", locale: "en_US") { (response, error) in
             if let response = response{
                 self.venues = response
                 
@@ -178,28 +178,28 @@ class RecViewController: UIViewController {
         let currentPage = Int(ceil(x/w))
         // Do whatever with currentPage.
         //
-        retrieveVenues(latitude: self.loc[0], longitude: self.loc[1], category: "\(self.searchbar.searchTextField.text ?? "bars")", limit: 8, sortBy: "best_match", locale: "en_US") { (response, error) in
-            if let response = response{
-                self.venues = response
-                
-                //
-                // retrieve reviews
-                //
-                self.retrieveReviews(id: self.venues[currentPage].id! ) { (response_, error) in
-                    //print(self.ids[0])
-                    if let response = response_{
-                        self.reviews_ = response
-                        //print(response)
-                        DispatchQueue.main.async {
-                            self.user_review.text = self.reviews_[0].text
-                        }
-                    }
-                }
-                DispatchQueue.main.async {
-                    
-                }
-            }
-        }
+//        retrieveVenues(latitude: self.loc[0], longitude: self.loc[1], category: "\(self.searchbar.searchTextField.text ?? "newamerican")", limit: 8, sortBy: "best_match", locale: "en_US") { (response, error) in
+//            if let response = response{
+//                self.venues = response
+//                
+//                //
+//                // retrieve reviews
+//                //
+//                self.retrieveReviews(id: self.venues[currentPage].id! ) { (response_, error) in
+//                    //print(self.ids[0])
+//                    if let response = response_{
+//                        self.reviews_ = response
+//                        //print(response)
+//                        DispatchQueue.main.async {
+//                            self.user_review.text = self.reviews_[0].text
+//                        }
+//                    }
+//                }
+//                DispatchQueue.main.async {
+//                    
+//                }
+//            }
+//        }
         
         //
         // Change background when scroll
