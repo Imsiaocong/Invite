@@ -15,6 +15,7 @@ import AVKit
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var videoView: UIView!
+    @IBOutlet weak var log: UIView!
     
     var player: AVPlayer?
     
@@ -23,23 +24,32 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        let usrnameField = YokoTextField(frame: CGRect(x: 65, y: 200, width: 280, height: 70))
+        let regularBlur = UIBlurEffect(style: .regular)
+        let blurView = UIVisualEffectView(effect: regularBlur)
+        blurView.frame = log.bounds
+        blurView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        blurView.layer.cornerRadius = 16
+        blurView.layer.masksToBounds = true
+        log.addSubview(blurView)
+        log.sendSubviewToBack(blurView)
+        
+        let usrnameField = YokoTextField(frame: CGRect(x: 30, y: 40, width: 200, height: 60))
         usrnameField.placeholderColor = .darkGray
         usrnameField.textColor = .white
         usrnameField.placeholder = "Username"
 
-        self.view.addSubview(usrnameField)
+        self.log.addSubview(usrnameField)
         
-        let pswField = YokoTextField(frame: CGRect(x: 65, y: 280, width: 280, height: 70))
+        let pswField = YokoTextField(frame: CGRect(x: 30, y: 120, width: 200, height: 60))
         pswField.placeholderColor = .darkGray
         pswField.textColor = .white
         pswField.placeholder = "Password"
         pswField.isSecureTextEntry = true
 
-        self.view.addSubview(pswField)
+        self.log.addSubview(pswField)
         
-        let button = TransitionButton(frame: CGRect(x: 65, y: 500, width: 280, height: 60))
-        self.view.addSubview(button)
+        let button = TransitionButton(frame: CGRect(x: 30, y: 265, width: 200, height: 40))
+        self.log.addSubview(button)
         
         button.backgroundColor = .red
         button.setTitle("Go!", for: .normal)

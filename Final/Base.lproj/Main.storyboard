@@ -146,10 +146,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G5X-Ja-hH5">
+                                <rect key="frame" x="75" y="252" width="264" height="282"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </view>
                     <connections>
+                        <outlet property="log" destination="G5X-Ja-hH5" id="JmQ-Xy-LGY"/>
                         <outlet property="videoView" destination="Nns-gl-HnM" id="IBe-i6-wCv"/>
                         <segue destination="Ph1-6m-td0" kind="presentation" identifier="toRec" animates="NO" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="ClV-4g-54r"/>
                     </connections>
