@@ -7,4 +7,6 @@ target 'Final' do
   pod 'GooglePlaces'
   pod 'expanding-collection'
   pod 'AFNetworking', '~> 4.0'
+  pod 'TextFieldEffects'
+  pod 'TransitionButton'
 end

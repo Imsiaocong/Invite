@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ph1-6m-td0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ee2-8s-ne9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -129,10 +129,39 @@
             </objects>
             <point key="canvasLocation" x="1000.0000000000001" y="-611.38392857142856"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="D8n-mT-DRm">
+            <objects>
+                <viewController id="Ee2-8s-ne9" customClass="LoginViewController" customModule="Final" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6nS-2G-QqI"/>
+                        <viewControllerLayoutGuide type="bottom" id="uw8-dB-Mv6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ovb-8e-OGn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nns-gl-HnM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="videoView" destination="Nns-gl-HnM" id="IBe-i6-wCv"/>
+                        <segue destination="Ph1-6m-td0" kind="presentation" identifier="toRec" animates="NO" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="ClV-4g-54r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kXX-cH-sSI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-784.05797101449286" y="-611.38392857142856"/>
+        </scene>
         <!--Rec View Controller-->
         <scene sceneID="2Vt-CD-5W2">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="Ph1-6m-td0" customClass="RecViewController" customModule="Final" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="rec" hidesBottomBarWhenPushed="YES" id="Ph1-6m-td0" customClass="RecViewController" customModule="Final" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EHo-VN-bRH"/>
                         <viewControllerLayoutGuide type="bottom" id="Nda-vd-6VI"/>
@@ -296,6 +325,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <navigationItem key="navigationItem" id="NJx-WQ-TxX"/>
                     <connections>
                         <outlet property="background" destination="ULM-kz-rYF" id="1Bb-f7-OfA"/>
                         <outlet property="collectionView" destination="15J-It-ioA" id="geJ-cb-ceX"/>

@@ -16,6 +16,7 @@
 
 import UIKit
 import CoreLocation
+import TextFieldEffects
 
 class CustomCell: UICollectionViewCell{
     @IBOutlet weak var name: UILabel!
@@ -42,6 +43,7 @@ class RecViewController: UIViewController {
     var loc: [Double]  = []
     var locationManager = CLLocationManager()
     var indexPath: NSIndexPath?
+    var cat: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,6 +117,7 @@ class RecViewController: UIViewController {
                     }
                 }
                 DispatchQueue.main.async {
+                    self.cat = "newamerican"
                     self.collectionView.reloadData()
                 }
             }
@@ -162,6 +165,7 @@ class RecViewController: UIViewController {
                     }
                 }
                 DispatchQueue.main.async {
+                    self.cat = "\(self.searchbar.searchTextField.text ?? "newamerican")"
                     self.collectionView.reloadData()
                 }
             }
@@ -178,28 +182,28 @@ class RecViewController: UIViewController {
         let currentPage = Int(ceil(x/w))
         // Do whatever with currentPage.
         //
-//        retrieveVenues(latitude: self.loc[0], longitude: self.loc[1], category: "\(self.searchbar.searchTextField.text ?? "newamerican")", limit: 8, sortBy: "best_match", locale: "en_US") { (response, error) in
-//            if let response = response{
-//                self.venues = response
-//                
-//                //
-//                // retrieve reviews
-//                //
-//                self.retrieveReviews(id: self.venues[currentPage].id! ) { (response_, error) in
-//                    //print(self.ids[0])
-//                    if let response = response_{
-//                        self.reviews_ = response
-//                        //print(response)
-//                        DispatchQueue.main.async {
-//                            self.user_review.text = self.reviews_[0].text
-//                        }
-//                    }
-//                }
-//                DispatchQueue.main.async {
-//                    
-//                }
-//            }
-//        }
+        retrieveVenues(latitude: self.loc[0], longitude: self.loc[1], category: "\(self.cat)", limit: 8, sortBy: "best_match", locale: "en_US") { (response, error) in
+            if let response = response{
+                self.venues = response
+                
+                //
+                // retrieve reviews
+                //
+                self.retrieveReviews(id: self.venues[currentPage].id! ) { (response_, error) in
+                    //print(self.ids[0])
+                    if let response = response_{
+                        self.reviews_ = response
+                        //print(response)
+                        DispatchQueue.main.async {
+                            self.user_review.text = self.reviews_[0].text
+                        }
+                    }
+                }
+                DispatchQueue.main.async {
+                    
+                }
+            }
+        }
         
         //
         // Change background when scroll
@@ -250,6 +254,7 @@ class RecViewController: UIViewController {
             self.menu.frame = self.menu.frame.offsetBy( dx: 96, dy: 0);
         }) { (finish) in
             self.reload(inp: "bars")
+            self.cat = "bars"
         }
     }
     @IBAction func choiceTwo(_ sender: Any) {
@@ -257,6 +262,7 @@ class RecViewController: UIViewController {
             self.menu.frame = self.menu.frame.offsetBy( dx: 96, dy: 0);
         }) { (finish) in
             self.reload(inp: "gyms")
+            self.cat = "gyms"
         }
     }
     @IBAction func choiceThree(_ sender: Any) {
@@ -264,6 +270,7 @@ class RecViewController: UIViewController {
             self.menu.frame = self.menu.frame.offsetBy( dx: 96, dy: 0);
         }) { (finish) in
             self.reload(inp: "coffee")
+            self.cat = "coffee"
         }
     }
     

@@ -22,12 +22,16 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (3.8.0):
     - GoogleMaps/Base (= 3.8.0)
+  - TextFieldEffects (1.6.0)
+  - TransitionButton (0.5.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 4.0)
   - expanding-collection
   - GoogleMaps
   - GooglePlaces
+  - TextFieldEffects
+  - TransitionButton
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -35,13 +39,17 @@ SPEC REPOS:
     - expanding-collection
     - GoogleMaps
     - GooglePlaces
+    - TextFieldEffects
+    - TransitionButton
 
 SPEC CHECKSUMS:
   AFNetworking: d9fdf484a3c723ec3c558a41cc5754c7e845ee77
   expanding-collection: 7eb1fc48c6ec5e00c8887fe46c595c31b81b578a
   GoogleMaps: 7c8d66d70e4e8c300f43a7219d8fdaad7b325a9a
   GooglePlaces: d5f70c3e9e427964fdeca1301a665d276ccd8754
+  TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
+  TransitionButton: fb271583d9c9e4bb116b97103047e5157653f233
 
-PODFILE CHECKSUM: 9e160336fba7ecabb06b7f47ba58b4bf59b36f9f
+PODFILE CHECKSUM: 3bdde81497bdf9d427c4de1f950be9d761d26d6e
 
 COCOAPODS: 1.8.4
